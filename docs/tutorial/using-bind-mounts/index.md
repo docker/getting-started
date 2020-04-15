@@ -40,7 +40,7 @@ So, let's do it!
 
     ```bash
     docker run -dp 3000:3000 \
-        -w /app -v $PWD:/app \
+        -w /app -v ${PWD}:/app \
         node:12-alpine \
         sh -c "yarn install && yarn run dev"
     ```
