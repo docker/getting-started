@@ -53,7 +53,7 @@ To remember, this was the command we were using to define our app container.
 
 ```bash
 docker run -dp 3000:3000 \
-  -w /app -v $PWD:/app \
+  -w /app -v ${PWD}:/app \
   --network todo-app \
   -e MYSQL_HOST=mysql \
   -e MYSQL_USER=root \
@@ -102,7 +102,7 @@ docker run -dp 3000:3000 \
           - 3000:3000
     ```
 
-1. Next, we'll migrate both the working directory (`-w /app`) and the volume mapping (`-v $PWD:/app`) by using
+1. Next, we'll migrate both the working directory (`-w /app`) and the volume mapping (`-v ${PWD}:/app`) by using
    the `working_dir` and `volumes` definitions. Volumes also has a [short](https://docs.docker.com/compose/compose-file/#short-syntax-3) and [long](https://docs.docker.com/compose/compose-file/#long-syntax-3) syntax.
 
     One advantage of Docker Compose volume definitions is we can use relative paths from the current directory.
