@@ -44,7 +44,7 @@ command, you can see the command that was used to create each layer within an im
 
 ## Layer Caching
 
-Now that you've seen the layering in action, there's an important lesson to learn to help increase build
+Now that you've seen the layering in action, there's an important lesson to learn to help decrease build
 times for your container images.
 
 > Once a layer changes, all downstream layers have to be recreated as well
