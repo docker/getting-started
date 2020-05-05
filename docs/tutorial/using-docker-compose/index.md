@@ -12,7 +12,7 @@ So, how do we get started?
 
 ## Installing Docker Compose
 
-Since you installed Docker Desktop/Toolbox for either Windows or Mac, you already have Docker Compose!
+If you installed Docker Desktop/Toolbox for either Windows or Mac, you already have Docker Compose!
 Play-with-Docker instances already have Docker Compose installed as well. If you are on 
 a Linux machine, you will need to install Docker Compose using 
 [the instructions here](https://docs.docker.com/compose/install/). 
@@ -317,7 +317,7 @@ for the entire app. The containers will stop and the network will be removed.
     By default, named volumes in your compose file are NOT removed when running `docker-compose down`. If you want to
     remove the volumes, you will need to add the `--volumes` flag.
 
-    The Docker Dashboard does _not_ remove volumes when delete the app stack.
+    The Docker Dashboard does _not_ remove volumes when you delete the app stack.
 
 Once torn down, you can switch to another project, run `docker-compose up` and be ready to contribute to that project! It really
 doesn't get much simpler than that!
