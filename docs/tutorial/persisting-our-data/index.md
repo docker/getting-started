@@ -25,8 +25,19 @@ What you'll see is that the files created in one container aren't available in a
     commands (why we have the `&&`). The first portion picks a single random number and writes
     it to `/data.txt`. The second command is simply watching a file to keep the container running.
 
-1. Validate we can see the output by `exec`'ing into the container. To do so, you need to get the
-   container's ID (use `docker ps` to get it).
+1. Validate we can see the output by `exec`'ing into the container. To do so, open the Dashboard and click the first action of the container that is running the `ubuntu` image.
+
+    ![Dashboard open CLI into ubuntu container](dashboard-open-cli-ubuntu.png){: style=width:75% }
+{: .text-center }
+
+    You will see a terminal that is running a shell in the ubuntu container. Run the following command to see the content of the `/data.txt` file. Close this terminal afterwards again.
+
+    ```bash
+    cat /data.txt
+    ```
+
+    If you prefer the command line you can use the `docker exec` command to do the same. You need to get the
+   container's ID (use `docker ps` to get it) and get the content with the following command.
 
     ```bash
     docker exec <container-id> cat /data.txt
