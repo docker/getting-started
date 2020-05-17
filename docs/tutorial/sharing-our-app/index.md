@@ -20,7 +20,6 @@ an example command that you will need to run to push to this repo.
 ![Docker command with push example](push-command.png){: style=width:75% }
 {: .text-center }
 
-
 ## Pushing our Image
 
 1. In the command line, try running the push command you see on Docker Hub. Note that your command
@@ -63,8 +62,11 @@ new instance that has never seen this container image! To do this, we will use P
 
 1. Log in with your Docker Hub account.
 
-1. Once you're logged in, click on the "+ ADD NEW INSTANCE" link in the left side bar. After a few 
-    seconds, a terminal window will be opened in your browser.
+1. Once you're logged in, click on the "+ ADD NEW INSTANCE" link in the left side bar. (If you don't see it, make your browser a little wider.) After a few seconds, a terminal window will be opened in your browser.
+
+    ![Play with Docker add new instance](pwd-add-new-instance.png){: style=width:75% }
+{: .text-center }
+
 
 1. In the terminal, start your freshly pushed app.
 
@@ -76,7 +78,6 @@ new instance that has never seen this container image! To do this, we will use P
 
 1. Click on the 3000 badge when it comes up and you should see the app with your modifications! Hooray!
     If the 3000 badge doesn't show up, you can click on the "Open Port" button and type in 3000.
-
 
 ## Recap
 
