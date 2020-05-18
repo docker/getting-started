@@ -8,7 +8,6 @@ When a container runs, it uses the various layers from an image for its filesyst
 Each container also gets its own "scratch space" to create/update/remove files. Any
 changes won't be seen in another container, _even if_ they are using the same image.
 
-
 ### Seeing this in Practice
 
 To see this in action, we're going to start two containers and create a file in each.
@@ -25,8 +24,19 @@ What you'll see is that the files created in one container aren't available in a
     commands (why we have the `&&`). The first portion picks a single random number and writes
     it to `/data.txt`. The second command is simply watching a file to keep the container running.
 
-1. Validate we can see the output by `exec`'ing into the container. To do so, you need to get the
-   container's ID (use `docker ps` to get it).
+1. Validate we can see the output by `exec`'ing into the container. To do so, open the Dashboard and click the first action of the container that is running the `ubuntu` image.
+
+    ![Dashboard open CLI into ubuntu container](dashboard-open-cli-ubuntu.png){: style=width:75% }
+{: .text-center }
+
+    You will see a terminal that is running a shell in the ubuntu container. Run the following command to see the content of the `/data.txt` file. Close this terminal afterwards again.
+
+    ```bash
+    cat /data.txt
+    ```
+
+    If you prefer the command line you can use the `docker exec` command to do the same. You need to get the
+   container's ID (use `docker ps` to get it) and get the content with the following command.
 
     ```bash
     docker exec <container-id> cat /data.txt
@@ -46,7 +56,6 @@ What you'll see is that the files created in one container aren't available in a
 
 1. Go ahead and remove the first container using the `docker rm -f` command.
 
-
 ## Container Volumes
 
 With the previous experiment, we saw that each container starts from the image definition each time it starts. 
@@ -59,8 +68,6 @@ directory are also seen on the host machine. If we mount that same directory acr
 the same files.
 
 There are two main types of volumes. We will eventually use both, but we will start with **named volumes**.
-
-
 
 ## Persisting our Todo Data
 
@@ -84,7 +91,9 @@ Every time you use the volume, Docker will make sure the correct data is provide
     docker volume create todo-db
     ```
 
-1. Start the todo container, but add the `-v` flag to specify a volume mount. We will use the named volume and mount
+1. Stop the todo app container once again in the Dashboard (or with `docker rm -f <id>`), as it is still running without using the persistent volume.
+
+1. Start the todo app container, but add the `-v` flag to specify a volume mount. We will use the named volume and mount
    it to `/etc/todos`, which will capture all files created at the path.
 
     ```bash
@@ -96,7 +105,7 @@ Every time you use the volume, Docker will make sure the correct data is provide
     ![Items added to todo list](items-added.png){: style="width: 55%; " }
     {: .text-center }
 
-1. Remove the container for the todo app. Use `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
+1. Remove the container for the todo app. Use the Dashboard or `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
 
 1. Start a new container using the same command from above.
 
@@ -111,7 +120,6 @@ Hooray! You've now learned how to persist data!
     by a default Docker engine installation, there are many volume driver plugins available to support NFS, SFTP, NetApp, 
     and more! This will be especially important once you start running containers on multiple hosts in a clustered
     environment with Swarm, Kubernetes, etc.
-
 
 ## Diving into our Volume
 
@@ -141,12 +149,10 @@ need to have root access to access this directory from the host. But, that's whe
     If you wanted to look at the actual contents of the Mountpoint directory, you would need to first get inside
     of the VM.
 
-
 ## Recap
 
 At this point, we have a functioning application that can survive restarts! We can show it off to our investors and
 hope they can catch our vision!
 
 However, we saw earlier that rebuilding images for every change takes quite a bit of time. There's got to be a better
-way to make changes, right? With bind mounts (which we hinted at earlier), there is a better way! Let's take a look at 
-that now!
+way to make changes, right? With bind mounts (which we hinted at earlier), there is a better way! Let's take a look at that now!
