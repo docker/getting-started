@@ -49,7 +49,7 @@ And now, we'll start migrating a service at a time into the compose file.
 
 ## Defining the App Service
 
-To remember, this was the command we were using to define our app container.
+To remember, this was the command we were using to define our app container (replace the ` \ ` characters with `` ` `` in Windows PowerShell).
 
 ```bash
 docker run -dp 3000:3000 \
@@ -145,7 +145,7 @@ docker run -dp 3000:3000 \
   
 ### Defining the MySQL Service
 
-Now, it's time to define the MySQL service. The command that we used for that container was the following:
+Now, it's time to define the MySQL service. The command that we used for that container was the following (replace the ` \ ` characters with `` ` `` in Windows PowerShell):
 
 ```bash
 docker run -d \
