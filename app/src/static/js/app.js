@@ -117,7 +117,8 @@ function AddItemForm({ onNewItem }) {
 function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
     const { Container, Row, Col, Button } = ReactBootstrap;
 
-    const toggleCompletion = () => {
+    const toggleCompletion = (event) => {
+        event.stopPropagation()
         fetch(`/items/${item.id}`, {
             method: 'PUT',
             body: JSON.stringify({
