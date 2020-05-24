@@ -117,8 +117,7 @@ function AddItemForm({ onNewItem }) {
 function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
     const { Container, Row, Col, Button } = ReactBootstrap;
 
-    const toggleCompletion = (event) => {
-        event.stopPropagation()
+    const toggleCompletion = () => {
         fetch(`/items/${item.id}`, {
             method: 'PUT',
             body: JSON.stringify({
@@ -153,7 +152,6 @@ function ItemDisplay({ item, onItemUpdate, onItemRemoval }) {
                         }
                     >
                         <i
-                            onClick={toggleCompletion}
                             className={`far ${
                                 item.completed ? 'fa-check-square' : 'fa-square'
                             }`}
