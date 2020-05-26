@@ -67,7 +67,7 @@ a default command to run, and other metadata.
 We'll dive deeper into images later on, covering topics such as layering, best practices, and more.
 
 !!! info
-    If you're familiar with `chroot`, think of a container as extended version of `chroot`. The
+    If you're familiar with `chroot`, think of a container as an extended version of `chroot`. The
     filesystem is simply coming from the image. But, a container adds additional isolation not
     available when simply using chroot.
 
