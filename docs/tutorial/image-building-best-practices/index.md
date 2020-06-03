@@ -94,7 +94,7 @@ a change to the `package.json`. Make sense?
     Step 2/6 : WORKDIR /app
     ---> Using cache
     ---> 9577ae713121
-    Step 3/6 : COPY package* yarn.lock ./
+    Step 3/6 : COPY package.json yarn.lock ./
     ---> bd5306f49fc8
     Step 4/6 : RUN yarn install --production
     ---> Running in d53a06c9e4c2
@@ -122,7 +122,7 @@ a change to the `package.json`. Make sense?
 
 1. Now, make a change to the `src/static/index.html` file (like change the `<title>` to say "The Awesome Todo App").
 
-1. Build the Docker image now using `docker build` again. This time, your output should look a little different.
+1. Build the Docker image now using `docker build -t getting-started .` again. This time, your output should look a little different.
 
     ```plaintext hl_lines="5 8 11"
     Sending build context to Docker daemon  219.1kB
@@ -131,7 +131,7 @@ a change to the `package.json`. Make sense?
     Step 2/6 : WORKDIR /app
     ---> Using cache
     ---> 9577ae713121
-    Step 3/6 : COPY package* yarn.lock ./
+    Step 3/6 : COPY package.json yarn.lock ./
     ---> Using cache
     ---> bd5306f49fc8
     Step 4/6 : RUN yarn install --production
