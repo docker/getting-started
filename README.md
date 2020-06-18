@@ -27,7 +27,7 @@ Once it has started, you can open your browser to [http://localhost](http://loca
 
 ## Development
 
-This project has a `docker-compose.yml` file, which will start the mkdocs application on your
+This project has a `mkdocs.yml` file, which will start the mkdocs application on your
 local machine and help you see changes instantly.
 
 ```bash
