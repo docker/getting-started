@@ -18,12 +18,14 @@ You'll notice a few flags being used. Here's some more info on them:
 - `-p 80:80` - map port 80 of the host to port 80 in the container
 - `docker/getting-started` - the image to use
 
-!!! info "Pro tip"
-    You can combine single character flags to shorten the full command.
-    As an example, the command above could be written as:
-    ```
+###### Pro tip
+
+You can combine single character flags to shorten the full command.
+As an example, the command above could be written as:
+
+```cli
     docker run -dp 80:80 docker/getting-started
-    ```
+```
 
 ## The Docker Dashboard
 
