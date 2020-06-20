@@ -89,9 +89,10 @@ much easier than having to look up the container ID and remove it.
 
 ### Starting our updated app container
 
-1. Now, start your updated app.
+1. Now, rebuild your image and start your updated app.
 
     ```bash
+    docker build -t getting-started
     docker run -dp 3000:3000 getting-started
     ```
 
