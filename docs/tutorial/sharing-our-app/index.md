@@ -60,6 +60,8 @@ new instance that has never seen this container image! To do this, we will use P
 
 1. Open your browser to [Play with Docker](https://www.docker.com/play-with-docker).
 
+1. Select the **Get Started** button under the **Lab Environment**
+
 1. Log in with your Docker Hub account.
 
 1. Once you're logged in, click on the "+ ADD NEW INSTANCE" link in the left side bar. (If you don't see it, make your browser a little wider.) After a few seconds, a terminal window will be opened in your browser.
