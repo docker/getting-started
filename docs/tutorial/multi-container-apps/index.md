@@ -199,7 +199,7 @@ With all of that explained, let's start our dev-ready container!
    is **secret**.
 
     ```bash
-    docker exec -ti <mysql-container-id> mysql -p todos
+    docker exec -it <mysql-container-id> mysql -p todos
     ```
 
     And in the mysql shell, run the following:
