@@ -74,17 +74,16 @@ ways that we can remove the old container. Feel free to choose the path that you
 
 ### Removing a container using the Docker Dashboard
 
-If you open the Docker dashboard, you can remove a container with two clicks! It's certainly
+If you open the VSCode Extension, you can remove a container with two clicks! It's certainly
 much easier than having to look up the container ID and remove it.
 
-1. With the dashboard opened, hover over the app container and you'll see a collection of action
-    buttons appear on the right.
+1. With the extension opened, navigate to the container and right click.
 
-1. Click on the trash can icon to delete the container. 
+1. Click on the remove container option
 
 1. Confirm the removal and you're done!
 
-![Docker Dashboard - removing a container](dashboard-removing-container.png)
+![Docker Dashboard - removing a container](vs-removing-container.png)
 
 
 ### Starting our updated app container

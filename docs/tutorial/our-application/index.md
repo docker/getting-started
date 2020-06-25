@@ -97,10 +97,10 @@ command (remember that from earlier?).
 At this point, you should have a running todo list manager with a few items, all built by you!
 Now, let's make a few changes and learn about managing our containers.
 
-If you take a quick look at the Docker Dashboard, you should see your two containers running now 
+If you take a quick look at the VSCode extension, you should see your two containers running now 
 (this tutorial and your freshly launched app container)!
 
-![Docker Dashboard with tutorial and app containers running](dashboard-two-containers.png)
+![Docker Dashboard with tutorial and app containers running](vs-two-containers.png)
 
 
 ## Recap

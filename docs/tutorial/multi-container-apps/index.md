@@ -216,10 +216,10 @@ With all of that explained, let's start our dev-ready container!
 
     Obviously, your table will look different because it has your items. But, you should see them stored there!
 
-If you take a quick look at the Docker Dashboard, you'll see that we have two app containers running. But, there's
+If you take a quick look at the Docker extension, you'll see that we have two app containers running. But, there's
 no real indication that they are grouped together in a single app. We'll see how to make that better shortly!
 
-![Docker Dashboard showing two ungrouped app containers](dashboard-multi-container-app.png)
+![Docker Dashboard showing two ungrouped app containers](vs-multi-container-app.png)
 
 ## Recap
 

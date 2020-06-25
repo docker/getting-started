@@ -293,19 +293,15 @@ Now that we have our `docker-compose.yml` file, we can start it up!
 
 1. At this point, you should be able to open your app and see it running. And hey! We're down to a single command!
 
-## Seeing our App Stack in Docker Dashboard
+## Seeing our App Stack in the Docker Extension
 
-If we look at the Docker Dashboard, we'll see that there is a group named **app**. This is the "project name" from Docker
-Compose and used to group the containers together. By default, the project name is simply the name of the directory that the
-`docker-compose.yml` was located in.
+If we look at the Docker Extension, we can changing our grouping options using the 'cog' and 'group by'. In this instance we want to see containers sharing a network. 
 
-![Docker Dashboard with app project](dashboard-app-project-collapsed.png)
+![VS Extension with network](vs-app-project-collapsed.png)
 
-If you twirl down the app, you will see the two containers we defined in the compose file. The names are also a little
-more descriptive, as they follow the pattern of `<project-name>_<service-name>_<replica-number>`. So, it's very easy to
-quickly see what container is our app and which container is the mysql database.
+If you twirl down the network, you will see the two containers we defined in the compose file. 
 
-![Docker Dashboard with app project expanded](dashboard-app-project-expanded.png)
+![VS Extension with app network expanded](vs-app-project-expanded.png)
 
 
 ## Tearing it All Down

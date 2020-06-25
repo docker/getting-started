@@ -25,20 +25,19 @@ You'll notice a few flags being used. Here's some more info on them:
     docker run -dp 80:80 docker/getting-started
     ```
 
-## The Docker Dashboard
+## The VSCode Extension
 
-Before going too far, we want to highlight the Docker Dashboard, which gives
+Before going too far, we want to highlight the Docker VSCode Extension, which gives
 you a quick view of the containers running on your machine. It gives you quick
 access to container logs, lets you get a shell inside the container, and lets you
 easily manage container lifecycle (stop, remove, etc.). 
 
-To access the dashboard, follow the instructions for either 
-[Mac](https://docs.docker.com/docker-for-mac/dashboard/) or 
-[Windows](https://docs.docker.com/docker-for-windows/dashboard/). If you open the dashboard
-now, you will see this tutorial running! The container name (`jolly_bouman` below) is a
+To access the extension, follow the instructions  
+[here](https://code.visualstudio.com/docs/containers/overview). If you open the extension
+now, you will see this tutorial running! The container name (`angry_taussig` below) is a
 randomly created name. So, you'll most likely have a different name.
 
-![Tutorial container running in Docker Dashboard](tutorial-in-dashboard.png)
+![Tutorial container running in Docker Extension](vs-tutorial-in-extension.png)
 
 
 ## What is a container?
