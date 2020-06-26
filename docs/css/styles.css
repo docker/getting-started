@@ -37,7 +37,6 @@ body {
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
-    color: #577482;
 }
 
 h1, h2, h3, h4, .md-footer-nav__inner, .md-header-nav__title, footer.md-footer {
@@ -48,6 +47,6 @@ h1, h2, h3, h4, .md-footer-nav__inner, .md-header-nav__title, footer.md-footer {
     line-height: 2.9rem;
 }
 
-.md-header-nav__button img {
+.md-header-nav__button.md-logo img {
     width: 145px;
 }
