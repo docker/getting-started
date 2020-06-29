@@ -15,7 +15,7 @@ command, you can see the command that was used to create each layer within an im
 
     ```plaintext
     IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    a78a40cbf866        18 seconds ago      /bin/sh -c #(nop)  CMD ["node" "/app/src/ind…   0B                  
+    a78a40cbf866        18 seconds ago      /bin/sh -c #(nop)  CMD ["node" "/src/index.…    0B                  
     f1d1808565d6        19 seconds ago      /bin/sh -c yarn install --production            85.4MB              
     a2c054d14948        36 seconds ago      /bin/sh -c #(nop) COPY dir:5dc710ad87c789593…   198kB               
     9577ae713121        37 seconds ago      /bin/sh -c #(nop) WORKDIR /app                  0B                  
