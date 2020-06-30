@@ -74,7 +74,7 @@ There are two main types of volumes. We will eventually use both, but we will st
 By default, the todo app stores its data in a [SQLite Database](https://www.sqlite.org/index.html) at
 `/etc/todos/todo.db`. If you're not familiar with SQLite, no worries! It's simply a relational database in 
 which all of the data is stored in a single file. While this isn't the best for large-scale applications,
-it works for small demos. We'll talk about switching this to an actual database engine later.
+it works for small demos. We'll talk about switching this to a different database engine later.
 
 With the database being a single file, if we can persist that file on the host and make it available to the
 next container, it should be able to pick up where the last one left off. By creating a volume and attaching
