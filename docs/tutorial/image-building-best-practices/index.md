@@ -15,7 +15,7 @@ command, you can see the command that was used to create each layer within an im
 
     ```plaintext
     IMAGE               CREATED             CREATED BY                                      SIZE                COMMENT
-    a78a40cbf866        18 seconds ago      /bin/sh -c #(nop)  CMD ["node" "/src/index.…    0B                  
+    a78a40cbf866        18 seconds ago      /bin/sh -c #(nop)  CMD ["node" "src/index.j…    0B                  
     f1d1808565d6        19 seconds ago      /bin/sh -c yarn install --production            85.4MB              
     a2c054d14948        36 seconds ago      /bin/sh -c #(nop) COPY dir:5dc710ad87c789593…   198kB               
     9577ae713121        37 seconds ago      /bin/sh -c #(nop) WORKDIR /app                  0B                  
@@ -56,7 +56,7 @@ FROM node:12-alpine
 WORKDIR /app
 COPY . .
 RUN yarn install --production
-CMD ["node", "/src/index.js"]
+CMD ["node", "src/index.js"]
 ```
 
 Going back to the image history output, we see that each command in the Dockerfile becomes a new layer in the image.
@@ -76,7 +76,7 @@ a change to the `package.json`. Make sense?
     COPY package.json yarn.lock ./
     RUN yarn install --production
     COPY . .
-    CMD ["node", "/src/index.js"]
+    CMD ["node", "src/index.js"]
     ```
 
 1. Build a new image using `docker build`.
@@ -110,7 +110,7 @@ a change to the `package.json`. Make sense?
     ---> 4e68fbc2d704
     Step 5/6 : COPY . .
     ---> a239a11f68d8
-    Step 6/6 : CMD ["node", "/src/index.js"]
+    Step 6/6 : CMD ["node", "src/index.js"]
     ---> Running in 49999f68df8f
     Removing intermediate container 49999f68df8f
     ---> e709c03bc597
@@ -139,7 +139,7 @@ a change to the `package.json`. Make sense?
     ---> 4e68fbc2d704
     Step 5/6 : COPY . .
     ---> cccde25a3d9a
-    Step 6/6 : CMD ["node", "/src/index.js"]
+    Step 6/6 : CMD ["node", "src/index.js"]
     ---> Running in 2be75662c150
     Removing intermediate container 2be75662c150
     ---> 458e5c6f080c
