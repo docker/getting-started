@@ -36,12 +36,21 @@ So, let's do it!
 
 1. Make sure you don't have any previous `getting-started` containers running.
 
-1. Run the following command (replace the ` \ ` characters with `` ` `` in Windows PowerShell). We'll explain what's going on afterwards:
+1. Run the following command. We'll explain what's going on afterwards:
 
     ```bash
     docker run -dp 3000:3000 \
         -w /app -v ${PWD}:/app \
         node:12-alpine \
+        sh -c "yarn install && yarn run dev"
+    ```
+
+    If you are using PowerShell then use this command.
+
+    ```powershell
+    docker run -dp 3000:3000 `
+        -w /app -v ${PWD}:/app `
+        node:12-alpine `
         sh -c "yarn install && yarn run dev"
     ```
 

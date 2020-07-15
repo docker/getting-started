@@ -38,7 +38,7 @@ For now, we will create the network first and attach the MySQL container at star
     ```
 
 1. Start a MySQL container and attach it the network. We're also going to define a few environment variables that the
-  database will use to initialize the database (see the "Environment Variables" section in the [MySQL Docker Hub listing](https://hub.docker.com/_/mysql/)) (replace the ` \ ` characters with `` ` `` in Windows PowerShell).
+  database will use to initialize the database (see the "Environment Variables" section in the [MySQL Docker Hub listing](https://hub.docker.com/_/mysql/)).
 
     ```bash
     docker run -d \
@@ -46,6 +46,17 @@ For now, we will create the network first and attach the MySQL container at star
         -v todo-mysql-data:/var/lib/mysql \
         -e MYSQL_ROOT_PASSWORD=secret \
         -e MYSQL_DATABASE=todos \
+        mysql:5.7
+    ```
+
+    If you are using PowerShell then use this command.
+
+    ```powershell
+    docker run -d `
+        --network todo-app --network-alias mysql `
+        -v todo-mysql-data:/var/lib/mysql `
+        -e MYSQL_ROOT_PASSWORD=secret `
+        -e MYSQL_DATABASE=todos `
         mysql:5.7
     ```
 
@@ -165,7 +176,7 @@ The todo app supports the setting of a few environment variables to specify MySQ
 
 With all of that explained, let's start our dev-ready container!
 
-1. We'll specify each of the environment variables above, as well as connect the container to our app network (replace the ` \ ` characters with `` ` `` in Windows PowerShell).
+1. We'll specify each of the environment variables above, as well as connect the container to our app network.
 
     ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
@@ -176,6 +187,20 @@ With all of that explained, let's start our dev-ready container!
       -e MYSQL_PASSWORD=secret \
       -e MYSQL_DB=todos \
       node:12-alpine \
+      sh -c "yarn install && yarn run dev"
+    ```
+
+    If you are using PowerShell then use this command.
+
+    ```powershell hl_lines="3 4 5 6 7"
+    docker run -dp 3000:3000 `
+      -w /app -v ${PWD}:/app `
+      --network todo-app `
+      -e MYSQL_HOST=mysql `
+      -e MYSQL_USER=root `
+      -e MYSQL_PASSWORD=secret `
+      -e MYSQL_DB=todos `
+      node:12-alpine `
       sh -c "yarn install && yarn run dev"
     ```
 
