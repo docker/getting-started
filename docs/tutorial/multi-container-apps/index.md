@@ -180,7 +180,7 @@ With all of that explained, let's start our dev-ready container!
 
     ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
-      -w /app -v ${PWD}:/app \
+      -w /app -v "$(pwd):/app" \
       --network todo-app \
       -e MYSQL_HOST=mysql \
       -e MYSQL_USER=root \
@@ -194,7 +194,7 @@ With all of that explained, let's start our dev-ready container!
 
     ```powershell hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 `
-      -w /app -v ${PWD}:/app `
+      -w /app -v "$(pwd):/app" `
       --network todo-app `
       -e MYSQL_HOST=mysql `
       -e MYSQL_USER=root `
