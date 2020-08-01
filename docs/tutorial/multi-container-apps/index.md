@@ -40,6 +40,8 @@ For now, we will create the network first and attach the MySQL container at star
 1. Start a MySQL container and attach it the network. We're also going to define a few environment variables that the
   database will use to initialize the database (see the "Environment Variables" section in the [MySQL Docker Hub listing](https://hub.docker.com/_/mysql/)).
 
+=== "Unix"
+
     ```bash
     docker run -d \
         --network todo-app --network-alias mysql \
@@ -48,9 +50,7 @@ For now, we will create the network first and attach the MySQL container at star
         -e MYSQL_DATABASE=todos \
         mysql:5.7
     ```
-
-    If you are using PowerShell then use this command.
-
+=== "Windows"
     ```powershell
     docker run -d `
         --network todo-app --network-alias mysql `
@@ -178,6 +178,8 @@ With all of that explained, let's start our dev-ready container!
 
 1. We'll specify each of the environment variables above, as well as connect the container to our app network.
 
+=== "Unix"
+
     ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
       -w /app -v "$(pwd):/app" \
@@ -189,9 +191,7 @@ With all of that explained, let's start our dev-ready container!
       node:12-alpine \
       sh -c "yarn install && yarn run dev"
     ```
-
-    If you are using PowerShell then use this command.
-
+=== "Windows"
     ```powershell hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 `
       -w /app -v "$(pwd):/app" `
