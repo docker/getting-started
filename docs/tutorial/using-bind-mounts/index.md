@@ -37,6 +37,7 @@ So, let's do it!
 1. Make sure you don't have any previous `getting-started` containers running.
 
 1. Run the following command. We'll explain what's going on afterwards:
+=== "Unix"
 
     ```bash
     docker run -dp 3000:3000 \
@@ -45,7 +46,7 @@ So, let's do it!
         sh -c "yarn install && yarn run dev"
     ```
 
-    If you are using PowerShell then use this command.
+=== "Windows"
 
     ```powershell
     docker run -dp 3000:3000 `
