@@ -51,31 +51,32 @@ And now, we'll start migrating a service at a time into the compose file.
 
 To remember, this was the command we were using to define our app container.
 
-```bash
-docker run -dp 3000:3000 \
-  -w /app -v "$(pwd):/app" \
-  --network todo-app \
-  -e MYSQL_HOST=mysql \
-  -e MYSQL_USER=root \
-  -e MYSQL_PASSWORD=secret \
-  -e MYSQL_DB=todos \
-  node:12-alpine \
-  sh -c "yarn install && yarn run dev"
-```
+=== "Unix"
+   ```bash
+   docker run -dp 3000:3000 \
+     -w /app -v "$(pwd):/app" \
+     --network todo-app \
+     -e MYSQL_HOST=mysql \
+     -e MYSQL_USER=root \
+     -e MYSQL_PASSWORD=secret \
+     -e MYSQL_DB=todos \
+     node:12-alpine \
+     sh -c "yarn install && yarn run dev"
+   ```
 
-If you are using PowerShell then use this command.
+=== "Windows"
 
-```powershell
-docker run -dp 3000:3000 `
-  -w /app -v "$(pwd):/app" `
-  --network todo-app `
-  -e MYSQL_HOST=mysql `
-  -e MYSQL_USER=root `
-  -e MYSQL_PASSWORD=secret `
-  -e MYSQL_DB=todos `
-  node:12-alpine `
-  sh -c "yarn install && yarn run dev"
-```
+   ```powershell
+   docker run -dp 3000:3000 `
+     -w /app -v "$(pwd):/app" `
+     --network todo-app `
+     -e MYSQL_HOST=mysql `
+     -e MYSQL_USER=root `
+     -e MYSQL_PASSWORD=secret `
+     -e MYSQL_DB=todos `
+     node:12-alpine `
+     sh -c "yarn install && yarn run dev"
+   ```
 
 1. First, let's define the service entry and the image for the container. We can pick any name for the service. 
    The name will automatically become a network alias, which will be useful when defining our MySQL service.
@@ -161,25 +162,27 @@ docker run -dp 3000:3000 `
 
 Now, it's time to define the MySQL service. The command that we used for that container was the following:
 
-```bash
-docker run -d \
-  --network todo-app --network-alias mysql \
-  -v todo-mysql-data:/var/lib/mysql \
-  -e MYSQL_ROOT_PASSWORD=secret \
-  -e MYSQL_DATABASE=todos \
-  mysql:5.7
-```
+=== "Unix"
 
-If you are using PowerShell then use this command.
+   ```bash
+   docker run -d \
+     --network todo-app --network-alias mysql \
+     -v todo-mysql-data:/var/lib/mysql \
+     -e MYSQL_ROOT_PASSWORD=secret \
+     -e MYSQL_DATABASE=todos \
+     mysql:5.7
+   ```
 
-```powershell
-docker run -d `
-  --network todo-app --network-alias mysql `
-  -v todo-mysql-data:/var/lib/mysql `
-  -e MYSQL_ROOT_PASSWORD=secret `
-  -e MYSQL_DATABASE=todos `
-  mysql:5.7
-```
+=== "Windows"
+
+   ```powershell
+   docker run -d `
+     --network todo-app --network-alias mysql `
+     -v todo-mysql-data:/var/lib/mysql `
+     -e MYSQL_ROOT_PASSWORD=secret `
+     -e MYSQL_DATABASE=todos `
+     mysql:5.7
+   ```
 
 1. We will first define the new service and name it `mysql` so it automatically gets the network alias. We'll
    go ahead and specify the image to use as well.
