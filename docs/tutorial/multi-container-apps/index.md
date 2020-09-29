@@ -167,7 +167,7 @@ The todo app supports the setting of a few environment variables to specify MySQ
     
     A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
     these secrets are mounted as files in the running container. You'll see many apps (including the MySQL image and the todo app)
-    also support env vars with a `_FILE` suffix to point to a file containing the file. 
+    also support env vars with a `_FILE` suffix to point to a file containing the variable. 
     
     As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file 
     as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
