@@ -8,7 +8,7 @@ command, you can see the command that was used to create each layer within an im
    created earlier in the tutorial.
 
     ```bash
-    docker image history getting-started
+    docker image history docker/getting-started
     ```
 
     You should get output that looks something like this (dates/IDs may be different).
@@ -38,7 +38,7 @@ command, you can see the command that was used to create each layer within an im
    full output (yes... funny how you use a truncated flag to get untruncated output, huh?)
 
     ```bash
-    docker image history --no-trunc getting-started
+    docker image history --no-trunc docker/getting-started
     ```
 
 
