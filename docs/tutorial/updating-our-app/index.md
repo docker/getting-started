@@ -49,7 +49,7 @@ ways that we can remove the old container. Feel free to choose the path that you
 
 ### Removing a container using the CLI
 
-1. Get the ID of the container by using the `docker ps` command.
+1. Get the ID or container name of the container by using the `docker ps` command.
 
     ```bash
     docker ps
@@ -58,19 +58,19 @@ ways that we can remove the old container. Feel free to choose the path that you
 1. Use the `docker stop` command to stop the container.
 
     ```bash
-    # Swap out <the-container-id> with the ID from docker ps
-    docker stop <the-container-id>
+    # Swap out <the-container-id> or <the-container-name> with the ID and NAMES from docker ps
+    docker stop <the-container-id> or <the-container-name>
     ```
 
 1. Once the container has stopped, you can remove it by using the `docker rm` command.
 
     ```bash
-    docker rm <the-container-id>
+    docker rm <the-container-id> or <the-container-name>
     ```
 
 !!! info "Pro tip"
     You can stop and remove a container in a single command by adding the "force" flag
-    to the `docker rm` command. For example: `docker rm -f <the-container-id>`
+    to the `docker rm` command. For example: `docker rm -f <the-container-id> or <the-container-name>`
 
 ### Removing a container using the Docker Dashboard
 
