@@ -38,7 +38,8 @@ There are several other options, which you can read about in the [docker scan do
 As well as scanning your newly built image on the command line, you can also [configure Docker Hub](https://docs.docker.com/docker-hub/vulnerability-scanning/)
 to scan all newly pushed images automatically, and you can then see the results in both Docker Hub and Docker Desktop.
 
-![Hub vulnerability scanning](hvs.png){: style=width:75% }{: .text-center }
+![Hub vulnerability scanning](hvs.png){: style=width:75% }
+{: .text-center }
 
 ## Image Layering
 
