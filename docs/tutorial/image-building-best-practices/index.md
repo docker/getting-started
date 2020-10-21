@@ -1,3 +1,44 @@
+## Security Scanning
+
+When you have built an image, it is good practice to scan it for security vulnerabilities, using the `docker scan` command.
+Docker has partnered with [Snyk](http://snyk.io) to provide the vulnerability scanning service.
+
+For example, to scan the `getting-started` image you created earlier in the tutorial, you can just type
+```bash
+docker scan getting-started
+```
+
+The scan uses a constantly updated database of vulnerabilities, so the output you see will vary as new
+vulnerabilities are discovered, but it might look something like this:
+
+```plaintext
+✗ Low severity vulnerability found in freetype/freetype
+  Description: CVE-2020-15999
+  Info: https://snyk.io/vuln/SNYK-ALPINE310-FREETYPE-1019641
+  Introduced through: freetype/freetype@2.10.0-r0, gd/libgd@2.2.5-r2
+  From: freetype/freetype@2.10.0-r0
+  From: gd/libgd@2.2.5-r2 > freetype/freetype@2.10.0-r0
+  Fixed in: 2.10.0-r1
+
+✗ Medium severity vulnerability found in libxml2/libxml2
+  Description: Out-of-bounds Read
+  Info: https://snyk.io/vuln/SNYK-ALPINE310-LIBXML2-674791
+  Introduced through: libxml2/libxml2@2.9.9-r3, libxslt/libxslt@1.1.33-r3, nginx-module-xslt/nginx-module-xslt@1.17.9-r1
+  From: libxml2/libxml2@2.9.9-r3
+  From: libxslt/libxslt@1.1.33-r3 > libxml2/libxml2@2.9.9-r3
+  From: nginx-module-xslt/nginx-module-xslt@1.17.9-r1 > libxml2/libxml2@2.9.9-r3
+  Fixed in: 2.9.9-r4
+```
+
+The output lists the type of vulnerability, a URL to learn more, and importantly which version of the relevant library
+fixes the vulnerability.
+
+There are several other options, which you can read about in the [docker scan documentation](https://docs.docker.com/engine/scan/).
+
+As well as scanning your newly built image on the command line, you can also [configure Docker Hub](https://docs.docker.com/docker-hub/vulnerability-scanning/)
+to scan all newly pushed images automatically, and you can then see the results in both Docker Hub and Docker Desktop.
+
+![Hub vulnerability scanning](hvs.png){: style=width:75% }{: .text-center }
 
 ## Image Layering
 
@@ -222,6 +263,7 @@ into an nginx container. Cool, huh?
 ## Recap
 
 By understanding a little bit about how images are structured, we can build images faster and ship fewer changes.
+Scanning images gives us confidence that the containers we are running and distributing are secure.
 Multi-stage builds also help us reduce overall image size and increase final container security by separating
 build-time dependencies from runtime dependencies.
 
