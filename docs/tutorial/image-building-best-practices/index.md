@@ -4,6 +4,7 @@ When you have built an image, it is good practice to scan it for security vulner
 Docker has partnered with [Snyk](http://snyk.io) to provide the vulnerability scanning service.
 
 For example, to scan the `getting-started` image you created earlier in the tutorial, you can just type
+
 ```bash
 docker scan getting-started
 ```
