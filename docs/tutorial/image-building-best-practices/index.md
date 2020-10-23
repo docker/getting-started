@@ -1,6 +1,6 @@
 ## Security Scanning
 
-When you have built an image, it is good practice to scan it for security vulnerabilities, using the `docker scan` command.
+When you have built an image, it is good practice to scan it for security vulnerabilities using the `docker scan` command.
 Docker has partnered with [Snyk](http://snyk.io) to provide the vulnerability scanning service.
 
 For example, to scan the `getting-started` image you created earlier in the tutorial, you can just type
@@ -267,4 +267,3 @@ By understanding a little bit about how images are structured, we can build imag
 Scanning images gives us confidence that the containers we are running and distributing are secure.
 Multi-stage builds also help us reduce overall image size and increase final container security by separating
 build-time dependencies from runtime dependencies.
-
