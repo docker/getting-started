@@ -49,7 +49,7 @@ And now, we'll start migrating a service at a time into the compose file.
 
 ## Defining the App Service
 
-To remember, this was the command we were using to define our app container.
+To remember, this was the command we were using to define our app container:
 
 ```bash
 docker run -dp 3000:3000 \
@@ -60,20 +60,6 @@ docker run -dp 3000:3000 \
   -e MYSQL_PASSWORD=secret \
   -e MYSQL_DB=todos \
   node:12-alpine \
-  sh -c "yarn install && yarn run dev"
-```
-
-If you are using PowerShell then use this command.
-
-```powershell
-docker run -dp 3000:3000 `
-  -w /app -v "$(pwd):/app" `
-  --network todo-app `
-  -e MYSQL_HOST=mysql `
-  -e MYSQL_USER=root `
-  -e MYSQL_PASSWORD=secret `
-  -e MYSQL_DB=todos `
-  node:12-alpine `
   sh -c "yarn install && yarn run dev"
 ```
 
@@ -167,17 +153,6 @@ docker run -d \
   -v todo-mysql-data:/var/lib/mysql \
   -e MYSQL_ROOT_PASSWORD=secret \
   -e MYSQL_DATABASE=todos \
-  mysql:5.7
-```
-
-If you are using PowerShell then use this command.
-
-```powershell
-docker run -d `
-  --network todo-app --network-alias mysql `
-  -v todo-mysql-data:/var/lib/mysql `
-  -e MYSQL_ROOT_PASSWORD=secret `
-  -e MYSQL_DATABASE=todos `
   mysql:5.7
 ```
 
