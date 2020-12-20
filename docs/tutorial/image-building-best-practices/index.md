@@ -44,7 +44,7 @@ to scan all newly pushed images automatically, and you can then see the results 
 
 ## Image Layering
 
-Did you know that you can look at what makes up an image? Using the `docker image history`
+Did you know that you can look at how an image is composed? Using the `docker image history`
 command, you can see the command that was used to create each layer within an image.
 
 1. Use the `docker image history` command to see the layers in the `getting-started` image you
@@ -73,8 +73,8 @@ command, you can see the command that was used to create each layer within an im
     <missing>           13 days ago         /bin/sh -c #(nop) ADD file:e69d441d729412d24…   5.59MB   
     ```
 
-    Each of the lines represents a layer in the image. The display here shows the base at the bottom with
-    the newest layer at the top. Using this, you can also quickly see the size of each layer, helping 
+    Each line represents a layer in the image. The display here shows the base at the bottom with
+    the newest layer at the top. Using this you can also quickly see the size of each layer, helping to
     diagnose large images.
 
 1. You'll notice that several of the lines are truncated. If you add the `--no-trunc` flag, you'll get the
@@ -107,7 +107,7 @@ You might remember that when we made a change to the image, the yarn dependencie
 way to fix this? It doesn't make much sense to ship around the same dependencies every time we build, right?
 
 To fix this, we need to restructure our Dockerfile to help support the caching of the dependencies. For Node-based
-applications, those dependencies are defined in the `package.json` file. So, what if we copied only that file in first,
+applications, those dependencies are defined in the `package.json` file. So what if we start by copying only that file in first,
 install the dependencies, and _then_ copy in everything else? Then, we only recreate the yarn dependencies if there was
 a change to the `package.json`. Make sense?
 
@@ -131,9 +131,9 @@ a change to the `package.json`. Make sense?
     `.dockerignore` files are an easy way to selectively copy only image relevant files.
     You can read more about this
     [here](https://docs.docker.com/engine/reference/builder/#dockerignore-file).
-    In this case, the `node_modules` folder should be omitted in the second `COPY` step because otherwise,
+    In this case, the `node_modules` folder should be omitted in the second `COPY` step because otherwise
     it would possibly overwrite files which were created by the command in the `RUN` step.
-    For further details on why this is recommended for Node.js applications and other best practices,
+    For further details on why this is recommended for Node.js applications as well as further best practices,
     have a look at their guide on
     [Dockerizing a Node.js web app](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/).
 
@@ -205,7 +205,7 @@ a change to the `package.json`. Make sense?
     Successfully tagged getting-started:latest
     ```
 
-    First off, you should notice that the build was MUCH faster! And, you'll see that steps 1-4 all have
+    First off, you should notice that the build was MUCH faster! You'll also see that steps 1-4 all have
     `Using cache`. So, hooray! We're using the build cache. Pushing and pulling this image and updates to it
     will be much faster as well. Hooray!
 
@@ -213,7 +213,7 @@ a change to the `package.json`. Make sense?
 ## Multi-Stage Builds
 
 While we're not going to dive into it too much in this tutorial, multi-stage builds are an incredibly powerful
-tool to help use multiple stages to create an image. There are several advantages for them:
+tool which help us by using multiple stages to create an image. They offer several advantages including:
 
 - Separate build-time dependencies from runtime dependencies
 - Reduce overall image size by shipping _only_ what your app needs to run
@@ -221,7 +221,7 @@ tool to help use multiple stages to create an image. There are several advantage
 ### Maven/Tomcat Example
 
 When building Java-based applications, a JDK is needed to compile the source code to Java bytecode. However,
-that JDK isn't needed in production. Also, you might be using tools like Maven or Gradle to help build the app.
+that JDK isn't needed in production. You might also be using tools such as Maven or Gradle to help build the app.
 Those also aren't needed in our final image. Multi-stage builds help.
 
 ```dockerfile
@@ -234,7 +234,7 @@ FROM tomcat
 COPY --from=build /app/target/file.war /usr/local/tomcat/webapps 
 ```
 
-In this example, we use one stage (called `build`) to perform the actual Java build using Maven. In the second
+In this example, we use one stage (called `build`) to perform the actual Java build with Maven. In the second
 stage (starting at `FROM tomcat`), we copy in files from the `build` stage. The final image is only the last stage
 being created (which can be overridden using the `--target` flag).
 
@@ -242,7 +242,7 @@ being created (which can be overridden using the `--target` flag).
 ### React Example
 
 When building React applications, we need a Node environment to compile the JS code (typically JSX), SASS stylesheets,
-and more into static HTML, JS, and CSS. If we aren't doing server-side rendering, we don't even need a Node environment
+and more into static HTML, JS, and CSS. Although if we aren't performing server-side rendering, we don't even need a Node environment
 for our production build. Why not ship the static resources in a static nginx container?
 
 ```dockerfile
