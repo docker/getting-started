@@ -1,4 +1,3 @@
-
 In the previous chapter, we talked about and used a **named volume** to persist the data in our database.
 Named volumes are great if we simply want to store data, as we don't have to worry about _where_ the data
 is stored.
@@ -99,6 +98,20 @@ Using bind mounts is _very_ common for local development setups. The advantage i
 all of the build tools and environments installed. With a single `docker run` command, the dev environment is pulled and ready
 to go. We'll talk about Docker Compose in a future step, as this will help simplify our commands (we're already getting a lot
 of flags).
+
+
+### Optionals steps for "resource sharing" may be required
+If the `docker run...` command above fails with an error message, stating `docker: Error response form daemon: status code not OK but 500:...`, it's likely caused by the fact, that resource sharing is disabled (e.g. default in "Docker Desktop for Windows").
+
+To make it work, you need to add a path to the "Docker Desktop" configuration, to define it as a shared ressource between the host and docker containers.
+1. Click the "gear" symbol inside the docker dashboard, to open the "Settings" panel.
+1. Click "Resources"
+1. Click "FILE SHARING"
+1. Click on blue "plus" symbol
+1. Enter the path to the shared folder
+1. Click on "Apply & Restart"
+
+***Please note:** If the path name is automatically shortened, you need to make sure it's still valid. In most cases you'll need to manually reduce the path name to the directory on the higher level.*
 
 ## Recap
 
