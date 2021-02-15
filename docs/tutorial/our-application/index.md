@@ -39,7 +39,7 @@ see a few flaws in the Dockerfile below. But, don't worry! We'll go over them.
     ```dockerfile
     FROM node:12-alpine
     WORKDIR /app
-    COPY . .
+    COPY . /
     RUN yarn install --production
     CMD ["node", "src/index.js"]
     ```
