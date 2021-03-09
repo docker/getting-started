@@ -18,6 +18,7 @@ theme:
   palette:
     primary: blue
     accent: blue
+    scheme: preference
   font:
     text: Roboto
     code: Roboto Mono
@@ -26,7 +27,6 @@ theme:
 
 extra_css:
   - css/styles.css
-  - css/dark-mode.css
 
 # Plugins
 plugins:
@@ -37,7 +37,7 @@ plugins:
 # Customization
 extra:
   social:
-    - type: github-alt
+    - icon: fontawesome/brands/github-alt
       link: https://github.com/docker/getting-started
 
 # Extensions

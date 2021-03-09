@@ -2,7 +2,7 @@
 
 set -e
 
-if [ $1 == "--push" ]; then
+if [ "$1" == "--push" ]; then
     WILL_PUSH=1
 else
     WILL_PUSH=0
