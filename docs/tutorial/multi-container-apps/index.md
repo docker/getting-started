@@ -70,7 +70,7 @@ For now, we will create the network first and attach the MySQL container at star
     !!! info "Troubleshooting"
         If you see a `docker: no matching manifest` error, it's because you're trying to run the container in a different
         architecture than amd64, which is the only supported architecture for the mysql image at the moment. To solve this
-        add the flag --platform linux/amd64 in the previous command
+        add the flag `--platform linux/amd64 in the previous command
 
 1. To confirm we have the database up and running, connect to the database and verify it connects.
 
