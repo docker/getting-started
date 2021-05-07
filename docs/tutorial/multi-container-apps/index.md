@@ -66,6 +66,11 @@ For now, we will create the network first and attach the MySQL container at star
         You'll notice we're using a volume named `todo-mysql-data` here and mounting it at `/var/lib/mysql`, which is
         where MySQL stores its data. However, we never ran a `docker volume create` command. Docker recognizes we want
         to use a named volume and creates one automatically for us.
+        
+    !!! info "Troubleshooting"
+        If you see a `docker: no matching manifest` error, it's because you're trying to run the container in a different
+        architecture than amd64, which is the only supported architecture for the mysql image at the moment. To solve this
+        add the flag --platform linux/amd64 in the previous command
 
 1. To confirm we have the database up and running, connect to the database and verify it connects.
 
