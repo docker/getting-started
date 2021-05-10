@@ -6,6 +6,7 @@ site_author: Docker
 # Repository
 repo_name: docker/getting-started
 repo_url: https://github.com/docker/getting-started
+repo_icon: fontawesome/brands/github-alt
 edit_uri: ""
 
 # Copyright
@@ -16,28 +17,50 @@ theme:
   name: material
   language: en
   palette:
-    primary: blue
-    accent: blue
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
   font:
     text: Roboto
     code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github-alt
   favicon: assets/images/favicon.png
   logo: 'images/docker-labs-logo.svg'
 
 extra_css:
   - css/styles.css
-  - css/dark-mode.css
+
+extra_javascript:
+  - js/index.js
 
 # Plugins
 plugins:
   - search
   - minify:
       minify_html: true
+  - redirects:
+      redirect_maps:
+        index.md: tutorial/index.md
 
 # Customization
 extra:
   social:
-    - type: github-alt
+    - icon: fontawesome/brands/github-alt
       link: https://github.com/docker/getting-started
 
 # Extensions

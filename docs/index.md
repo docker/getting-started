@@ -1,2 +1,0 @@
-redirect: /tutorial/
-
