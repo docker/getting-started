@@ -33,11 +33,20 @@ plugins:
   - search
   - minify:
       minify_html: true
+  - redirects:
+      redirect_maps:
+        'index.md': 'tutorial/index.md'
+  - i18n:
+      languages:
+        es: "Español"
+        en: "English"
+      default_language: 'en'
+      translate_nav:
 
 # Customization
 extra:
   social:
-    - type: github-alt
+    - icon: fontawesome/brands/github-alt
       link: https://github.com/docker/getting-started
 
 # Extensions
@@ -69,6 +78,7 @@ markdown_extensions:
 
 # Page tree
 nav:
+# English
   - Getting Started: tutorial/index.md
   - Our Application: tutorial/our-application/index.md
   - Updating our App: tutorial/updating-our-app/index.md
@@ -79,3 +89,14 @@ nav:
   - Using Docker Compose: tutorial/using-docker-compose/index.md
   - Image Building Best Practices: tutorial/image-building-best-practices/index.md
   - What Next?: tutorial/what-next/index.md
+# Spanish
+  - Empezando: tutorial/index.es.md
+  - Nuestra Aplicación: tutorial/our-application/index.es.md
+  - Actualizando nuestra Aplicación: tutorial/updating-our-app/index.es.md
+  - Compartiendo nuestra Aplicación: tutorial/sharing-our-app/index.es.md
+  - Persistiendo nuestra DB: tutorial/persisting-our-data/index.es.md
+  - Uso de Bind Mounts: tutorial/using-bind-mounts/index.es.md
+  - Aplicaciones Multi-Container: tutorial/multi-container-apps/index.es.md
+  - Uso de Docker Compose: tutorial/using-docker-compose/index.es.md
+  - Mejores Prácticas para Creación de Imágen: tutorial/image-building-best-practices/index.es.md
+  - ¿Qué sigue?: tutorial/what-next/index.es.md

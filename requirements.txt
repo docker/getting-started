@@ -1,5 +1,8 @@
-mkdocs==1.0.4
-mkdocs-material==4.6.3
+mkdocs==1.1.2
+mkdocs-material==7.1.0
 mkdocs-minify-plugin==0.2.3
 pygments==2.7.4
 pymdown-extensions==7.0
+mkdocs-translations==0.1.1
+mkdocs-redirects==1.0.1
+mkdocs-i18n==0.3.0
