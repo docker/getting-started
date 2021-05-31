@@ -3,6 +3,7 @@
 FROM python:alpine AS base
 WORKDIR /app
 COPY requirements.txt .
+RUN apk add --no-cache g++
 RUN pip install -r requirements.txt
 
 # Run tests to validate app
