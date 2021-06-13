@@ -102,8 +102,8 @@ docker run -dp 3000:3000 `
 
 
 1. Let's migrate the `-p 3000:3000` part of the command by defining the `ports` for the service. We will use the
-   [short syntax](https://docs.docker.com/compose/compose-file/#short-syntax-1) here, but there is also a more verbose 
-   [long syntax](https://docs.docker.com/compose/compose-file/#long-syntax-1) available as well.
+   [short syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax) here, but there is also a more verbose 
+   [long syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax) available as well.
 
     ```yaml hl_lines="7 8"
     version: "3.7"
