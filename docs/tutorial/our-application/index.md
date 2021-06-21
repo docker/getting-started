@@ -38,7 +38,6 @@ see a few flaws in the Dockerfile below. But, don't worry! We'll go over them.
 
     ```dockerfile
     FROM node:12-alpine
-    RUN apk add --no-cache python g++ make
     WORKDIR /app
     COPY . .
     RUN yarn install --production
