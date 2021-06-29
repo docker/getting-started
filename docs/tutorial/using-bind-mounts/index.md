@@ -55,8 +55,8 @@ So, let's do it!
     ```
 
     - `-dp 3000:3000` - same as before. Run in detached (background) mode and create a port mapping
-    - `-w /app` - sets the "working directory" or the current directory that the command will run from
-    - `-v "$(pwd):/app"` - bind mount the current directory from the host in the container into the `/app` directory
+    - `-w /app` - sets the container's present working directory where the command will run from
+    - `-v "$(pwd):/app"` - bind mount (link) the host's present working directory to the container's `/app` directory
     - `node:12-alpine` - the image to use. Note that this is the base image for our app from the Dockerfile
     - `sh -c "yarn install && yarn run dev"` - the command. We're starting a shell using `sh` (alpine doesn't have `bash`) and
       running `yarn install` to install _all_ dependencies and then running `yarn run dev`. If we look in the `package.json`,
