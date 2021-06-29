@@ -36,7 +36,7 @@ So, let's do it!
 
 1. Make sure you don't have any previous `getting-started` containers running.
 
-1. Run the following command. We'll explain what's going on afterwards:
+1. Run the following command from the source code folder. We'll explain what's going on afterwards:
 
     ```bash
     docker run -dp 3000:3000 \
