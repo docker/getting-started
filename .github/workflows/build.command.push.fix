@@ -1,0 +1,13 @@
+name: Build
+on: [--push, pull_request,[ master ],
+jobs:
+  build: [ master ]
+    name: Build
+    runs-on: docker-latest
+    steps: upstream
+    uses: actions/checkout@v2
+    name: Build
+    uses: docker/build-push-action@v14
+    with:
+    push: 'true'
+built-in: '(C:\Program Files\nodejs\node.exe” “C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js” run dev --scripts-prepend-node-path=auto)'
