@@ -9,6 +9,6 @@ else
 fi
 
 docker buildx build \
-      --platform linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6 \
+      --platform linux/amd64,linux/arm64 \
       -t docker/getting-started:latest \
       $( (( $WILL_PUSH == 1 )) && printf %s '--push' ) .

@@ -49,17 +49,31 @@ And now, we'll start migrating a service at a time into the compose file.
 
 ## Defining the App Service
 
-To remember, this was the command we were using to define our app container (replace the ` \ ` characters with `` ` `` in Windows PowerShell).
+To remember, this was the command we were using to define our app container.
 
 ```bash
 docker run -dp 3000:3000 \
-  -w /app -v ${PWD}:/app \
+  -w /app -v "$(pwd):/app" \
   --network todo-app \
   -e MYSQL_HOST=mysql \
   -e MYSQL_USER=root \
   -e MYSQL_PASSWORD=secret \
   -e MYSQL_DB=todos \
   node:12-alpine \
+  sh -c "yarn install && yarn run dev"
+```
+
+If you are using PowerShell then use this command.
+
+```powershell
+docker run -dp 3000:3000 `
+  -w /app -v "$(pwd):/app" `
+  --network todo-app `
+  -e MYSQL_HOST=mysql `
+  -e MYSQL_USER=root `
+  -e MYSQL_PASSWORD=secret `
+  -e MYSQL_DB=todos `
+  node:12-alpine `
   sh -c "yarn install && yarn run dev"
 ```
 
@@ -102,7 +116,7 @@ docker run -dp 3000:3000 \
           - 3000:3000
     ```
 
-1. Next, we'll migrate both the working directory (`-w /app`) and the volume mapping (`-v ${PWD}:/app`) by using
+1. Next, we'll migrate both the working directory (`-w /app`) and the volume mapping (`-v "$(pwd):/app"`) by using
    the `working_dir` and `volumes` definitions. Volumes also has a [short](https://docs.docker.com/compose/compose-file/#short-syntax-3) and [long](https://docs.docker.com/compose/compose-file/#long-syntax-3) syntax.
 
     One advantage of Docker Compose volume definitions is we can use relative paths from the current directory.
@@ -145,7 +159,7 @@ docker run -dp 3000:3000 \
   
 ### Defining the MySQL Service
 
-Now, it's time to define the MySQL service. The command that we used for that container was the following (replace the ` \ ` characters with `` ` `` in Windows PowerShell):
+Now, it's time to define the MySQL service. The command that we used for that container was the following:
 
 ```bash
 docker run -d \
@@ -153,6 +167,17 @@ docker run -d \
   -v todo-mysql-data:/var/lib/mysql \
   -e MYSQL_ROOT_PASSWORD=secret \
   -e MYSQL_DATABASE=todos \
+  mysql:5.7
+```
+
+If you are using PowerShell then use this command.
+
+```powershell
+docker run -d `
+  --network todo-app --network-alias mysql `
+  -v todo-mysql-data:/var/lib/mysql `
+  -e MYSQL_ROOT_PASSWORD=secret `
+  -e MYSQL_DATABASE=todos `
   mysql:5.7
 ```
 

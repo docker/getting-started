@@ -37,8 +37,8 @@ For now, we will create the network first and attach the MySQL container at star
     docker network create todo-app
     ```
 
-1. Start a MySQL container and attach it the network. We're also going to define a few environment variables that the
-  database will use to initialize the database (see the "Environment Variables" section in the [MySQL Docker Hub listing](https://hub.docker.com/_/mysql/)) (replace the ` \ ` characters with `` ` `` in Windows PowerShell).
+1. Start a MySQL container and attach it to the network. We're also going to define a few environment variables that the
+  database will use to initialize the database (see the "Environment Variables" section in the [MySQL Docker Hub listing](https://hub.docker.com/_/mysql/)).
 
     ```bash
     docker run -d \
@@ -46,6 +46,17 @@ For now, we will create the network first and attach the MySQL container at star
         -v todo-mysql-data:/var/lib/mysql \
         -e MYSQL_ROOT_PASSWORD=secret \
         -e MYSQL_DATABASE=todos \
+        mysql:5.7
+    ```
+
+    If you are using PowerShell then use this command.
+
+    ```powershell
+    docker run -d `
+        --network todo-app --network-alias mysql `
+        -v todo-mysql-data:/var/lib/mysql `
+        -e MYSQL_ROOT_PASSWORD=secret `
+        -e MYSQL_DATABASE=todos `
         mysql:5.7
     ```
 
@@ -156,7 +167,7 @@ The todo app supports the setting of a few environment variables to specify MySQ
     
     A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
     these secrets are mounted as files in the running container. You'll see many apps (including the MySQL image and the todo app)
-    also support env vars with a `_FILE` suffix to point to a file containing the file. 
+    also support env vars with a `_FILE` suffix to point to a file containing the variable. 
     
     As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file 
     as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
@@ -165,17 +176,31 @@ The todo app supports the setting of a few environment variables to specify MySQ
 
 With all of that explained, let's start our dev-ready container!
 
-1. We'll specify each of the environment variables above, as well as connect the container to our app network (replace the ` \ ` characters with `` ` `` in Windows PowerShell).
+1. We'll specify each of the environment variables above, as well as connect the container to our app network.
 
     ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
-      -w /app -v ${PWD}:/app \
+      -w /app -v "$(pwd):/app" \
       --network todo-app \
       -e MYSQL_HOST=mysql \
       -e MYSQL_USER=root \
       -e MYSQL_PASSWORD=secret \
       -e MYSQL_DB=todos \
       node:12-alpine \
+      sh -c "yarn install && yarn run dev"
+    ```
+
+    If you are using PowerShell then use this command.
+
+    ```powershell hl_lines="3 4 5 6 7"
+    docker run -dp 3000:3000 `
+      -w /app -v "$(pwd):/app" `
+      --network todo-app `
+      -e MYSQL_HOST=mysql `
+      -e MYSQL_USER=root `
+      -e MYSQL_PASSWORD=secret `
+      -e MYSQL_DB=todos `
+      node:12-alpine `
       sh -c "yarn install && yarn run dev"
     ```
 
@@ -199,7 +224,7 @@ With all of that explained, let's start our dev-ready container!
    is **secret**.
 
     ```bash
-    docker exec -ti <mysql-container-id> mysql -p todos
+    docker exec -it <mysql-container-id> mysql -p todos
     ```
 
     And in the mysql shell, run the following:
