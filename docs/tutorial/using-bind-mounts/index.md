@@ -38,6 +38,15 @@ So, let's do it!
 
 1. Run the following command. We'll explain what's going on afterwards:
 
+    ```bat
+    docker run -dp 3000:3000 \
+        -w /app -v %cd%:/app \
+        node:12-alpine \
+        sh -c "yarn install && yarn run dev"
+    ```
+
+    If you are using bash:
+    
     ```bash
     docker run -dp 3000:3000 \
         -w /app -v "$(pwd):/app" \
