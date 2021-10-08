@@ -16,6 +16,9 @@
     "uuid": "^3.3.3",
     "wait-port": "^0.2.2"
   },
+  "resolutions": {
+    "ansi-regex": "5.0.1"
+  },
   "prettier": {
     "trailingComma": "all",
     "tabWidth": 4,
@@ -24,8 +27,8 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "jest": "^24.9.0",
-    "nodemon": "^1.19.2",
+    "jest": "^27.2.5",
+    "nodemon": "^2.0.13",
     "prettier": "^1.18.2"
   }
 }
