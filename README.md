@@ -24,6 +24,8 @@ docker run -d -p 80:80 docker/getting-started
 
 Once it has started, you can open your browser to [http://localhost](http://localhost).
 
+If you got `ERROR [app-base 2/8] RUN apk add --no-cache python g++ make` try to change the Dockerfile by editing `python` to `python2` or `pythonN` based on your python version.
+
 ## Development
 
 This project has a `docker-compose.yml` file, which will start the mkdocs application on your
