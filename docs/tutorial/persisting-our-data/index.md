@@ -54,7 +54,10 @@ What you'll see is that the files created in one container aren't available in a
     And look! There's no `data.txt` file there! That's because it was written to the scratch space for
     only the first container.
 
-1. Go ahead and remove the first container using the `docker rm -f` command.
+1. Go ahead and remove the first container using the `docker rm -f <container-id>` command.
+    ```bash
+    docker rm -f <container-id>
+    ```
 
 ## Container Volumes
 
@@ -91,7 +94,7 @@ Every time you use the volume, Docker will make sure the correct data is provide
     docker volume create todo-db
     ```
 
-1. Stop the todo app container once again in the Dashboard (or with `docker rm -f <id>`), as it is still running without using the persistent volume.
+1. Stop the todo app container once again in the Dashboard (or with `docker rm -f <container-id>`), as it is still running without using the persistent volume.
 
 1. Start the todo app container, but add the `-v` flag to specify a volume mount. We will use the named volume and mount
    it to `/etc/todos`, which will capture all files created at the path.
@@ -105,7 +108,7 @@ Every time you use the volume, Docker will make sure the correct data is provide
     ![Items added to todo list](items-added.png){: style="width: 55%; " }
     {: .text-center }
 
-1. Remove the container for the todo app. Use the Dashboard or `docker ps` to get the ID and then `docker rm -f <id>` to remove it.
+1. Remove the container for the todo app. Use the Dashboard or `docker ps` to get the ID and then `docker rm -f <container-id>` to remove it.
 
 1. Start a new container using the same command from above.
 
