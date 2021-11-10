@@ -102,8 +102,8 @@ docker run -dp 3000:3000 `
 
 
 1. Let's migrate the `-p 3000:3000` part of the command by defining the `ports` for the service. We will use the
-   [short syntax](https://docs.docker.com/compose/compose-file/#short-syntax-1) here, but there is also a more verbose 
-   [long syntax](https://docs.docker.com/compose/compose-file/#long-syntax-1) available as well.
+   [short syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1) here, but there is also a more verbose 
+   [long syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax-1) available as well.
 
     ```yaml hl_lines="7 8"
     version: "3.7"
@@ -117,7 +117,7 @@ docker run -dp 3000:3000 `
     ```
 
 1. Next, we'll migrate both the working directory (`-w /app`) and the volume mapping (`-v "$(pwd):/app"`) by using
-   the `working_dir` and `volumes` definitions. Volumes also has a [short](https://docs.docker.com/compose/compose-file/#short-syntax-3) and [long](https://docs.docker.com/compose/compose-file/#long-syntax-3) syntax.
+   the `working_dir` and `volumes` definitions. Volumes also has a [short](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3) and [long](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax-3) syntax.
 
     One advantage of Docker Compose volume definitions is we can use relative paths from the current directory.
 
@@ -197,7 +197,7 @@ docker run -d `
 1. Next, we'll define the volume mapping. When we ran the container with `docker run`, the named volume was created
    automatically. However, that doesn't happen when running with Compose. We need to define the volume in the top-level
    `volumes:` section and then specify the mountpoint in the service config. By simply providing only the volume name,
-   the default options are used. There are [many more options available](https://docs.docker.com/compose/compose-file/#volume-configuration-reference) though.
+   the default options are used. There are [many more options available](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference) though.
 
     ```yaml hl_lines="8 9 10 11 12"
     version: "3.7"
