@@ -33,13 +33,13 @@ docker-compose version
    for the current schema versions and the compatibility matrix.
 
     ```yaml
-    version: "3.7"
+    version: "3.8"
     ```
 
 1. Next, we'll define the list of services (or containers) we want to run as part of our application.
 
     ```yaml hl_lines="3"
-    version: "3.7"
+    version: "3.8"
 
     services:
     ```
@@ -81,7 +81,7 @@ docker run -dp 3000:3000 `
    The name will automatically become a network alias, which will be useful when defining our MySQL service.
 
     ```yaml hl_lines="4 5"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -92,7 +92,7 @@ docker run -dp 3000:3000 `
    So, let's go ahead and move that into our file.
 
     ```yaml hl_lines="6"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -106,7 +106,7 @@ docker run -dp 3000:3000 `
    [long syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax-1) available as well.
 
     ```yaml hl_lines="7 8"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -122,7 +122,7 @@ docker run -dp 3000:3000 `
     One advantage of Docker Compose volume definitions is we can use relative paths from the current directory.
 
     ```yaml hl_lines="9 10 11"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -138,7 +138,7 @@ docker run -dp 3000:3000 `
 1. Finally, we need to migrate the environment variable definitions using the `environment` key.
 
     ```yaml hl_lines="12 13 14 15 16"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -185,7 +185,7 @@ docker run -d `
    go ahead and specify the image to use as well.
 
     ```yaml hl_lines="6 7"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -200,7 +200,7 @@ docker run -d `
    the default options are used. There are [many more options available](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference) though.
 
     ```yaml hl_lines="8 9 10 11 12"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -217,7 +217,7 @@ docker run -d `
 1. Finally, we only need to specify the environment variables.
 
     ```yaml hl_lines="10 11 12"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -238,7 +238,7 @@ At this point, our complete `docker-compose.yml` should look like this:
 
 
 ```yaml
-version: "3.7"
+version: "3.8"
 
 services:
   app:
