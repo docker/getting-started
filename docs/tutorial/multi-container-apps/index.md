@@ -110,6 +110,8 @@ For now, we will create the network first and attach the MySQL container at star
     ```
 
     Hooray! We have our `todos` database and it's ready for us to use!
+    
+    To exit the sql terminal type `exit` in the terminal.
 
 
 ## Connecting to MySQL
@@ -202,6 +204,20 @@ With all of that explained, let's start our dev-ready container!
       -e MYSQL_DB=todos \
       node:12-alpine \
       sh -c "yarn install && yarn run dev"
+    ```
+    
+    If you updated your docker file in the Bind Mount section of the tutorial use the updated command:
+    
+        ```bash hl_lines="3 4 5 6 7"
+    docker run -dp 3000:3000 \
+      -w /app -v "$(pwd):/app" \
+      --network todo-app \
+      -e MYSQL_HOST=mysql \
+      -e MYSQL_USER=root \
+      -e MYSQL_PASSWORD=secret \
+      -e MYSQL_DB=todos \
+      node:12-alpine \
+      sh -c "apk --no-cache --virtual build-dependencies add python2 make g++ && yarn install && yarn run dev"
     ```
 
     If you are using PowerShell then use this command.
