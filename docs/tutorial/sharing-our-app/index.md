@@ -58,7 +58,7 @@ an example command that you will need to run to push to this repo.
 Now that our image has been built and pushed into a registry, let's try running our app on a brand
 new instance that has never seen this container image! To do this, we will use Play with Docker.
 
-1. Open your browser to [Play with Docker](http://play-with-docker.com).
+1. Open your browser to [Play with Docker](https://labs.play-with-docker.com/).
 
 1. Log in with your Docker Hub account.
 

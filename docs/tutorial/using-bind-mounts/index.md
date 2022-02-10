@@ -14,7 +14,7 @@ changes and then restart the application. There are equivalent tools in most oth
 ## Quick Volume Type Comparisons
 
 Bind mounts and named volumes are the two main types of volumes that come with the Docker engine. However, additional
-volume drivers are available to support other uses cases ([SFTP](https://github.com/vieux/docker-volume-sshfs), [Ceph](https://ceph.com/geen-categorie/getting-started-with-the-docker-rbd-volume-plugin/), [NetApp](https://netappdvp.readthedocs.io/en/stable/), [S3](https://github.com/elementar/docker-s3-volume), and more).
+volume drivers are available to support other use cases ([SFTP](https://github.com/vieux/docker-volume-sshfs), [Ceph](https://ceph.com/geen-categorie/getting-started-with-the-docker-rbd-volume-plugin/), [NetApp](https://netappdvp.readthedocs.io/en/stable/), [S3](https://github.com/elementar/docker-s3-volume), and more).
 
 |   | Named Volumes | Bind Mounts |
 | - | ------------- | ----------- |
@@ -36,7 +36,7 @@ So, let's do it!
 
 1. Make sure you don't have any previous `getting-started` containers running.
 
-1. Run the following command. We'll explain what's going on afterwards:
+1. Run the following command from the source code folder. We'll explain what's going on afterwards:
 
     ```bash
     docker run -dp 3000:3000 \
@@ -55,8 +55,8 @@ So, let's do it!
     ```
 
     - `-dp 3000:3000` - same as before. Run in detached (background) mode and create a port mapping
-    - `-w /app` - sets the "working directory" or the current directory that the command will run from
-    - `-v "$(pwd):/app"` - bind mount the current directory from the host in the container into the `/app` directory
+    - `-w /app` - sets the container's present working directory where the command will run from
+    - `-v "$(pwd):/app"` - bind mount (link) the host's present working directory to the container's `/app` directory
     - `node:12-alpine` - the image to use. Note that this is the base image for our app from the Dockerfile
     - `sh -c "yarn install && yarn run dev"` - the command. We're starting a shell using `sh` (alpine doesn't have `bash`) and
       running `yarn install` to install _all_ dependencies and then running `yarn run dev`. If we look in the `package.json`,
@@ -78,7 +78,7 @@ So, let's do it!
     When you're done watching the logs, exit out by hitting `Ctrl`+`C`.
 
 1. Now, let's make a change to the app. In the `src/static/js/app.js` file, let's change the "Add Item" button to simply say
-   "Add". This change will be on line 109.
+   "Add". This change will be on line 109 - remember to save the file.
 
     ```diff
     -                         {submitting ? 'Adding...' : 'Add Item'}

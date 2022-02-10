@@ -4,12 +4,12 @@ application stack. The following question often arises - "Where will MySQL run? 
 container or run it separately?" In general, **each container should do one thing and do it well.** A few
 reasons:
 
-- There's a good chance you'd have to scale APIs and front-ends differently than databases
-- Separate containers let you version and update versions in isolation
+- There's a good chance you'd have to scale APIs and front-ends differently than databases.
+- Separate containers let you version and update versions in isolation.
 - While you may use a container for the database locally, you may want to use a managed service
   for the database in production. You don't want to ship your database engine with your app then.
 - Running multiple processes will require a process manager (the container only starts one process), 
-  which adds complexity to container startup/shutdown
+  which adds complexity to container startup/shutdown.
 
 And there are more reasons. So, we will update our application to work like this:
 
@@ -66,6 +66,20 @@ For now, we will create the network first and attach the MySQL container at star
         You'll notice we're using a volume named `todo-mysql-data` here and mounting it at `/var/lib/mysql`, which is
         where MySQL stores its data. However, we never ran a `docker volume create` command. Docker recognizes we want
         to use a named volume and creates one automatically for us.
+        
+    !!! info "Troubleshooting"
+        If you see a `docker: no matching manifest` error, it's because you're trying to run the container in a different
+        architecture than amd64, which is the only supported architecture for the mysql image at the moment. To solve this
+        add the flag `--platform linux/amd64` in the previous command. So your new command should look like this: 
+        
+         ```bash
+    docker run -d \
+        --network todo-app --network-alias mysql --platform linux/amd64 \
+        -v todo-mysql-data:/var/lib/mysql \
+        -e MYSQL_ROOT_PASSWORD=secret \
+        -e MYSQL_DATABASE=todos \
+        mysql:5.7
+    ```
 
 1. To confirm we have the database up and running, connect to the database and verify it connects.
 
@@ -96,6 +110,8 @@ For now, we will create the network first and attach the MySQL container at star
     ```
 
     Hooray! We have our `todos` database and it's ready for us to use!
+    
+    To exit the sql terminal type `exit` in the terminal.
 
 
 ## Connecting to MySQL
@@ -188,6 +204,20 @@ With all of that explained, let's start our dev-ready container!
       -e MYSQL_DB=todos \
       node:12-alpine \
       sh -c "yarn install && yarn run dev"
+    ```
+    
+    If you updated your docker file in the Bind Mount section of the tutorial use the updated command:
+    
+        ```bash hl_lines="3 4 5 6 7"
+    docker run -dp 3000:3000 \
+      -w /app -v "$(pwd):/app" \
+      --network todo-app \
+      -e MYSQL_HOST=mysql \
+      -e MYSQL_USER=root \
+      -e MYSQL_PASSWORD=secret \
+      -e MYSQL_DB=todos \
+      node:12-alpine \
+      sh -c "apk --no-cache --virtual build-dependencies add python2 make g++ && yarn install && yarn run dev"
     ```
 
     If you are using PowerShell then use this command.

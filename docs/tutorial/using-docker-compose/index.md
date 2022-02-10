@@ -33,13 +33,13 @@ docker-compose version
    for the current schema versions and the compatibility matrix.
 
     ```yaml
-    version: "3.7"
+    version: "3.8"
     ```
 
 1. Next, we'll define the list of services (or containers) we want to run as part of our application.
 
     ```yaml hl_lines="3"
-    version: "3.7"
+    version: "3.8"
 
     services:
     ```
@@ -81,7 +81,7 @@ docker run -dp 3000:3000 `
    The name will automatically become a network alias, which will be useful when defining our MySQL service.
 
     ```yaml hl_lines="4 5"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -92,7 +92,7 @@ docker run -dp 3000:3000 `
    So, let's go ahead and move that into our file.
 
     ```yaml hl_lines="6"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -102,11 +102,11 @@ docker run -dp 3000:3000 `
 
 
 1. Let's migrate the `-p 3000:3000` part of the command by defining the `ports` for the service. We will use the
-   [short syntax](https://docs.docker.com/compose/compose-file/#short-syntax-1) here, but there is also a more verbose 
-   [long syntax](https://docs.docker.com/compose/compose-file/#long-syntax-1) available as well.
+   [short syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1) here, but there is also a more verbose 
+   [long syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax-1) available as well.
 
     ```yaml hl_lines="7 8"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -117,12 +117,12 @@ docker run -dp 3000:3000 `
     ```
 
 1. Next, we'll migrate both the working directory (`-w /app`) and the volume mapping (`-v "$(pwd):/app"`) by using
-   the `working_dir` and `volumes` definitions. Volumes also has a [short](https://docs.docker.com/compose/compose-file/#short-syntax-3) and [long](https://docs.docker.com/compose/compose-file/#long-syntax-3) syntax.
+   the `working_dir` and `volumes` definitions. Volumes also has a [short](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3) and [long](https://docs.docker.com/compose/compose-file/compose-file-v3/#long-syntax-3) syntax.
 
     One advantage of Docker Compose volume definitions is we can use relative paths from the current directory.
 
     ```yaml hl_lines="9 10 11"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -138,7 +138,7 @@ docker run -dp 3000:3000 `
 1. Finally, we need to migrate the environment variable definitions using the `environment` key.
 
     ```yaml hl_lines="12 13 14 15 16"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -185,7 +185,7 @@ docker run -d `
    go ahead and specify the image to use as well.
 
     ```yaml hl_lines="6 7"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -197,10 +197,10 @@ docker run -d `
 1. Next, we'll define the volume mapping. When we ran the container with `docker run`, the named volume was created
    automatically. However, that doesn't happen when running with Compose. We need to define the volume in the top-level
    `volumes:` section and then specify the mountpoint in the service config. By simply providing only the volume name,
-   the default options are used. There are [many more options available](https://docs.docker.com/compose/compose-file/#volume-configuration-reference) though.
+   the default options are used. There are [many more options available](https://docs.docker.com/compose/compose-file/compose-file-v3/#volume-configuration-reference) though.
 
     ```yaml hl_lines="8 9 10 11 12"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -217,7 +217,7 @@ docker run -d `
 1. Finally, we only need to specify the environment variables.
 
     ```yaml hl_lines="10 11 12"
-    version: "3.7"
+    version: "3.8"
 
     services:
       app:
@@ -238,7 +238,7 @@ At this point, our complete `docker-compose.yml` should look like this:
 
 
 ```yaml
-version: "3.7"
+version: "3.8"
 
 services:
   app:
