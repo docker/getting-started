@@ -207,7 +207,7 @@ With all of that explained, let's start our dev-ready container!
     
     If you updated your docker file in the Bind Mount section of the tutorial use the updated command:
     
-        ```bash hl_lines="3 4 5 6 7"
+    ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
       -w /app -v "$(pwd):/app" \
       --network todo-app \
