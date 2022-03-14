@@ -72,14 +72,14 @@ For now, we will create the network first and attach the MySQL container at star
         architecture than amd64, which is the only supported architecture for the mysql image at the moment. To solve this
         add the flag `--platform linux/amd64` in the previous command. So your new command should look like this: 
         
-         ```bash
-    docker run -d \
-        --network todo-app --network-alias mysql --platform linux/amd64 \
-        -v todo-mysql-data:/var/lib/mysql \
-        -e MYSQL_ROOT_PASSWORD=secret \
-        -e MYSQL_DATABASE=todos \
-        mysql:5.7
-    ```
+        ```bash
+        docker run -d \
+            --network todo-app --network-alias mysql --platform linux/amd64 \
+            -v todo-mysql-data:/var/lib/mysql \
+            -e MYSQL_ROOT_PASSWORD=secret \
+            -e MYSQL_DATABASE=todos \
+            mysql:5.7
+        ```
 
 1. To confirm we have the database up and running, connect to the database and verify it connects.
 
