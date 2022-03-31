@@ -72,7 +72,7 @@ For now, we will create the network first and attach the MySQL container at star
         architecture than amd64, which is the only supported architecture for the mysql image at the moment. To solve this
         add the flag `--platform linux/amd64` in the previous command. So your new command should look like this: 
         
-         ```bash
+    ```bash
     docker run -d \
         --network todo-app --network-alias mysql --platform linux/amd64 \
         -v todo-mysql-data:/var/lib/mysql \
@@ -208,7 +208,7 @@ With all of that explained, let's start our dev-ready container!
     
     If you updated your docker file in the Bind Mount section of the tutorial use the updated command:
     
-        ```bash hl_lines="3 4 5 6 7"
+    ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
       -w /app -v "$(pwd):/app" \
       --network todo-app \
