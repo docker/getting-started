@@ -18,6 +18,16 @@ You'll notice a few flags being used. Here's some more info on them:
 - `-p 9080:80` - map port 9080 of the host to port 80 in the container
 - `docker/getting-started` - the image to use
 
+!!! info "Deep Dive"
+    One thing you may come across if you already have development environments
+    set-up is that yoiu may be using ports already. By using port 9080 there's a 
+    good chance nothing will conflict. If you have port 9080 used by something 
+    you can change that port number by changing the -p. E.g. to use port 9999
+    ```
+    docker run -d -p 9999:80 docker/getting-started
+    ```
+
+
 !!! info "Pro tip"
     You can combine single character flags to shorten the full command.
     As an example, the command above could be written as:
