@@ -8,7 +8,7 @@ reasons:
 - Separate containers let you version and update versions in isolation.
 - While you may use a container for the database locally, you may want to use a managed service
   for the database in production. You don't want to ship your database engine with your app then.
-- Running multiple processes will require a process manager (the container only starts one process), 
+- Running multiple processes will require a process manager (the container only starts one process),
   which adds complexity to container startup/shutdown.
 
 And there are more reasons. So, we will update our application to work like this:
@@ -66,12 +66,12 @@ For now, we will create the network first and attach the MySQL container at star
         You'll notice we're using a volume named `todo-mysql-data` here and mounting it at `/var/lib/mysql`, which is
         where MySQL stores its data. However, we never ran a `docker volume create` command. Docker recognizes we want
         to use a named volume and creates one automatically for us.
-        
+
     !!! info "Troubleshooting"
         If you see a `docker: no matching manifest` error, it's because you're trying to run the container in a different
         architecture than amd64, which is the only supported architecture for the mysql image at the moment. To solve this
-        add the flag `--platform linux/amd64` in the previous command. So your new command should look like this: 
-        
+        add the flag `--platform linux/amd64` in the previous command. So your new command should look like this:
+
     ```bash
     docker run -d \
         --network todo-app --network-alias mysql --platform linux/amd64 \
@@ -110,7 +110,7 @@ For now, we will create the network first and attach the MySQL container at star
     ```
 
     Hooray! We have our `todos` database and it's ready for us to use!
-    
+
     To exit the sql terminal type `exit` in the terminal.
 
 
@@ -177,15 +177,15 @@ The todo app supports the setting of a few environment variables to specify MySQ
 
 !!! warning Setting Connection Settings via Env Vars
     While using env vars to set connection settings is generally ok for development, it is **HIGHLY DISCOURAGED**
-    when running applications in production. Diogo Monica, the former lead of security at Docker, 
+    when running applications in production. Diogo Monica, the former lead of security at Docker,
     [wrote a fantastic blog post](https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
-    explaining why. 
-    
+    explaining why.
+
     A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
     these secrets are mounted as files in the running container. You'll see many apps (including the MySQL image and the todo app)
-    also support env vars with a `_FILE` suffix to point to a file containing the variable. 
-    
-    As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file 
+    also support env vars with a `_FILE` suffix to point to a file containing the variable.
+
+    As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file
     as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
     the variable and get the file contents.
 
@@ -205,9 +205,9 @@ With all of that explained, let's start our dev-ready container!
       node:12-alpine \
       sh -c "yarn install && yarn run dev"
     ```
-    
+
     If you updated your docker file in the Bind Mount section of the tutorial use the updated command:
-    
+
     ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
       -w /app -v "$(pwd):/app" \
