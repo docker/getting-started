@@ -135,7 +135,7 @@ docker run -dp 3000:3000 `
           - ./:/app
     ```
 
-1. Finally, we need to migrate the environment variable definitions using the `environment` key.
+1. Finally, we need to migrate the environment variable definitions using the `environment` key, and adding the `depends_on` and `networks` definition as below
 
     ```yaml hl_lines="12 13 14 15 16"
     version: "3.8"
@@ -150,10 +150,14 @@ docker run -dp 3000:3000 `
         volumes:
           - ./:/app
         environment:
-          MYSQL_HOST: mysql
-          MYSQL_USER: root
-          MYSQL_PASSWORD: secret
-          MYSQL_DB: todos
+          MYSQL_HOST= mysql
+          MYSQL_USER = root
+          MYSQL_PASSWORD= secret
+          MYSQL_DB= todos
+        depends_on:
+          - mysql
+        networks:
+          - todo_network
     ```
 
   
@@ -214,6 +218,26 @@ docker run -d `
       todo-mysql-data:
     ```
 
+1. We also neet to define the network mapping.
+
+    ```yaml hl_lines="14 15"
+    version: "3.8"
+
+    services:
+      app:
+        # The app service definition
+      mysql:
+        image: mysql:5.7
+        volumes:
+          - todo-mysql-data:/var/lib/mysql
+
+    volumes:
+      todo-mysql-data:
+    
+    networks:
+      todo-network:
+    ```
+
 1. Finally, we only need to specify the environment variables.
 
     ```yaml hl_lines="10 11 12"
@@ -227,18 +251,21 @@ docker run -d `
         volumes:
           - todo-mysql-data:/var/lib/mysql
         environment: 
-          MYSQL_ROOT_PASSWORD: secret
-          MYSQL_DATABASE: todos
+          MYSQL_ROOT_PASSWORD= secret
+          MYSQL_DATABASE= todos
     
     volumes:
       todo-mysql-data:
+    
+    networks:
+      todo-network:
     ```
 
 At this point, our complete `docker-compose.yml` should look like this:
 
 
 ```yaml
-version: "3.8"
+version: '3.8'
 
 services:
   app:
@@ -250,21 +277,28 @@ services:
     volumes:
       - ./:/app
     environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
-      MYSQL_DB: todos
-
+      - MYSQL_HOST=mysql
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=secret
+      - MYSQL_DB=todos
+    networks:
+      - todo-network
+    depends_on:
+      - mysql
   mysql:
     image: mysql:5.7
     volumes:
       - todo-mysql-data:/var/lib/mysql
-    environment: 
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: todos
-
+    environment:
+      - MYSQL_ROOT_PASSWORD=secret
+      - MYSQL_DATABASE=todos
+    networks:
+      - todo-network
 volumes:
   todo-mysql-data:
+
+networks:
+  todo-network:
 ```
 
 
