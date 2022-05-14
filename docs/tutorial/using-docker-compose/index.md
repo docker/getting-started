@@ -23,6 +23,8 @@ After installation, you should be able to run the following and see version info
 docker compose version
 ```
 
+If you are running an older versions of Docker Compose, maybe you will have to run **docker-compose version** instead. The expectation is that **docker-compose** command will be completely replaced by **docker compose** in the future.
+
 
 ## Creating our Compose File
 
