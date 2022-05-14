@@ -20,7 +20,7 @@ a Linux machine, you will need to install Docker Compose using
 After installation, you should be able to run the following and see version information.
 
 ```bash
-docker-compose version
+docker compose version
 ```
 
 
@@ -274,11 +274,11 @@ Now that we have our `docker-compose.yml` file, we can start it up!
 
 1. Make sure no other copies of the app/db are running first (`docker ps` and `docker rm -f <ids>`).
 
-1. Start up the application stack using the `docker-compose up` command. We'll add the `-d` flag to run everything in the
+1. Start up the application stack using the `docker compose up` command. We'll add the `-d` flag to run everything in the
    background.
 
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 
     When we run this, we should see output like this:
@@ -293,7 +293,7 @@ Now that we have our `docker-compose.yml` file, we can start it up!
     You'll notice that the volume was created as well as a network! By default, Docker Compose automatically creates a 
     network specifically for the application stack (which is why we didn't define one in the compose file).
 
-1. Let's look at the logs using the `docker-compose logs -f` command. You'll see the logs from each of the services interleaved
+1. Let's look at the logs using the `docker compose logs -f` command. You'll see the logs from each of the services interleaved
     into a single stream. This is incredibly useful when you want to watch for timing-related issues. The `-f` flag "follows" the
     log, so will give you live output as it's generated.
 
@@ -308,7 +308,7 @@ Now that we have our `docker-compose.yml` file, we can start it up!
 
     The service name is displayed at the beginning of the line (often colored) to help distinguish messages. If you want to
     view the logs for a specific service, you can add the service name to the end of the logs command (for example,
-    `docker-compose logs -f app`).
+    `docker compose logs -f app`).
 
     !!! info "Pro tip - Waiting for the DB before starting the app"
         When the app is starting up, it actually sits and waits for MySQL to be up and ready before trying to connect to it.
@@ -335,16 +335,16 @@ quickly see what container is our app and which container is the mysql database.
 
 ## Tearing it All Down
 
-When you're ready to tear it all down, simply run `docker-compose down` or hit the trash can on the Docker Dashboard 
+When you're ready to tear it all down, simply run `docker compose down` or hit the trash can on the Docker Dashboard 
 for the entire app. The containers will stop and the network will be removed.
 
 !!! warning "Removing Volumes"
-    By default, named volumes in your compose file are NOT removed when running `docker-compose down`. If you want to
+    By default, named volumes in your compose file are NOT removed when running `docker compose down`. If you want to
     remove the volumes, you will need to add the `--volumes` flag.
 
     The Docker Dashboard does _not_ remove volumes when you delete the app stack.
 
-Once torn down, you can switch to another project, run `docker-compose up` and be ready to contribute to that project! It really
+Once torn down, you can switch to another project, run `docker compose up` and be ready to contribute to that project! It really
 doesn't get much simpler than that!
 
 
