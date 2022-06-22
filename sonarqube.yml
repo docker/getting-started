@@ -1,0 +1,2 @@
+- name: Official SonarQube Scan
+  uses: SonarSource/sonarqube-scan-action@v1.1.0
