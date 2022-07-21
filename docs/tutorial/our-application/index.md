@@ -48,7 +48,7 @@ see a few flaws in the Dockerfile below. But, don't worry! We'll go over them.
 
     Please check that the file `Dockerfile` has no file extension like `.txt`. Some editors may append this file extension automatically and this would result in an error in the next step.
 
-1. If you haven't already done so, open a terminal and go to the `app` directory with the `Dockerfile`. Now build the container image using the `docker build` command.
+1. If you have already done so, open a terminal and go to the `app` directory with the `Dockerfile`. Now build the container image using the `docker build` command.
 
     ```bash
     docker build -t getting-started .
