@@ -206,6 +206,17 @@ docker run -d `
   mysql:5.7
 ```
 
+If you are using an Apple Silicon Mac or another ARM64 device then use this command.
+
+```bash
+docker run -d \
+  --network todo-app --network-alias mysql --platform linux/amd64 \
+  -v todo-mysql-data:/var/lib/mysql \
+  -e MYSQL_ROOT_PASSWORD=secret \
+  -e MYSQL_DATABASE=todos \
+  mysql:5.7
+```
+
 1. We will first define the new service and name it `mysql` so it automatically gets the network alias. We'll
    go ahead and specify the image to use as well.
 
