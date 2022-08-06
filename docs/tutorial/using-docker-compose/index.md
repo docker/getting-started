@@ -229,6 +229,19 @@ docker run -d \
       mysql:
         image: mysql:5.7
     ```
+    
+   If you are using an Apple Silicon Mac or another ARM64 device then add this lines.
+
+    ```yaml hl_lines="6 7 8"
+    version: "3.8"
+
+    services:
+      app:
+        # The app service definition
+      mysql:
+        platform: linux/amd64
+        image: mysql:5.7
+    ```
 
 1. Next, we'll define the volume mapping. When we ran the container with `docker run`, the named volume was created
    automatically. However, that doesn't happen when running with Compose. We need to define the volume in the top-level
