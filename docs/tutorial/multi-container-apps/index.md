@@ -206,7 +206,7 @@ With all of that explained, let's start our dev-ready container!
       sh -c "yarn install && yarn run dev"
     ```
 
-    If you updated your docker file in the Bind Mount section of the tutorial use the updated command:
+    If you are using an Apple Silicon Mac or another ARM64 device then use this command.
 
     ```bash hl_lines="3 4 5 6 7"
     docker run -dp 3000:3000 \
