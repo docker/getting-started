@@ -77,6 +77,20 @@ docker run -dp 3000:3000 `
   sh -c "yarn install && yarn run dev"
 ```
 
+If you are using an Apple Silicon Mac or another ARM64 device then use this command.
+
+```bash
+docker run -dp 3000:3000 \
+-w /app -v "$(pwd):/app" \
+--network todo-app \
+-e MYSQL_HOST=mysql \
+-e MYSQL_USER=root \
+-e MYSQL_PASSWORD=secret \
+-e MYSQL_DB=todos \
+node:12-alpine \
+sh -c "apk --no-cache --virtual build-dependencies add python2 make g++ && yarn install && yarn run dev"
+```
+
 1. First, let's define the service entry and the image for the container. We can pick any name for the service. 
    The name will automatically become a network alias, which will be useful when defining our MySQL service.
 
