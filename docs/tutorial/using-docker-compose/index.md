@@ -113,7 +113,18 @@ sh -c "apk --no-cache --virtual build-dependencies add python2 make g++ && yarn 
         image: node:12-alpine
         command: sh -c "yarn install && yarn run dev"
     ```
+    
+   For Silicon Mac or other ARM64 device use this line:
+   
+    ```yaml hl_lines="6"
+    version: "3.8"
 
+    services:
+      app:
+        image: node:12-alpine
+        command: sh -c "apk --no-cache --virtual build-dependencies add python2 make g++ && yarn install && yarn run dev"
+    ```
+   
 
 1. Let's migrate the `-p 3000:3000` part of the command by defining the `ports` for the service. We will use the
    [short syntax](https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-1) here, but there is also a more verbose 
