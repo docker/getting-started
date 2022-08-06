@@ -114,7 +114,8 @@ But for now you can just skip this error and head to the next section.
 In this section, we learned how to share our images by pushing them to a registry. We then went to a
 brand new instance and were able to run the freshly pushed image. This is quite common in CI pipelines,
 where the pipeline will create the image and push it to a registry and then the production environment
-can use the latest version of the image. You also learned that the platform in the image is importand when you like to use the image on a different platform.
+can use the latest version of the image. You also learned that the platform in the image is important
+when you like to use the image on a different platform.
 
 Now that we have that figured out, let's circle back around to what we noticed at the end of the last
 section. As a reminder, we noticed that when we restarted the app, we lost all of our todo list items.
