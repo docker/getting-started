@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-FROM node:12-alpine AS app-base
+FROM node:11-alpine AS app-base
 WORKDIR /app
 COPY app/package.json app/yarn.lock ./
 COPY app/spec ./spec
@@ -39,7 +39,3 @@ RUN mkdocs build
 FROM nginx:alpine
 COPY --from=app-zip-creator /app.zip /usr/share/nginx/html/assets/app.zip
 COPY --from=build /app/site /usr/share/nginx/html
-
-RUN apt-get update \
-    && apt-get install -qqy curl \
-    && rm -rf /var/lib/apt/lists
