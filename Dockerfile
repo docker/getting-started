@@ -39,3 +39,7 @@ RUN mkdocs build
 FROM nginx:alpine
 COPY --from=app-zip-creator /app.zip /usr/share/nginx/html/assets/app.zip
 COPY --from=build /app/site /usr/share/nginx/html
+
+RUN apt-get update \
+    && apt-get install -qqy curl \
+    && rm -rf /var/lib/apt/lists
