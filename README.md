@@ -15,7 +15,7 @@ into depth, it covers the following topics:
 - Using multi-stage builds to separate build-time and runtime dependencies
 
 ## Getting Started Added Dependabot Scanner changes
-
+## making some changes
 If you wish to run the tutorial, you can use the following command after installing Docker Desktop:
 
 ```bash
