@@ -14,7 +14,7 @@ into depth, it covers the following topics:
 - Using image layer caching to speed up builds and reduce push/pull size
 - Using multi-stage builds to separate build-time and runtime dependencies
 
-## Getting Started Added Dependabot Scanner
+## Getting Started Added Dependabot Scanner changes
 
 If you wish to run the tutorial, you can use the following command after installing Docker Desktop:
 
