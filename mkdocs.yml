@@ -1,0 +1,81 @@
+site_name: Getting Started
+site_description: Getting Started with Docker
+site_author: Docker
+# site_url: https://squidfunk.github.io/mkdocs-material/
+
+# Repository
+repo_name: docker/getting-started
+repo_url: https://github.com/docker/getting-started
+edit_uri: ""
+
+# Copyright
+copyright: 'Copyright &copy; 2020 Docker'
+
+# Configuration
+theme:
+  name: material
+  language: en
+  palette:
+    primary: blue
+    accent: blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.png
+  logo: 'images/docker-labs-logo.svg'
+
+extra_css:
+  - css/styles.css
+  - css/dark-mode.css
+
+# Plugins
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+# Customization
+extra:
+  social:
+    - type: github-alt
+      link: https://github.com/docker/getting-started
+
+# Extensions
+markdown_extensions:
+  - meta
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.footnotes
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: dockersamples
+      repo: 101-tutorial
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - attr_list
+
+# Page tree
+nav:
+  - Getting Started: tutorial/index.md
+  - Our Application: tutorial/our-application/index.md
+  - Updating our App: tutorial/updating-our-app/index.md
+  - Sharing our App: tutorial/sharing-our-app/index.md
+  - Persisting our DB: tutorial/persisting-our-data/index.md
+  - Using Bind Mounts: tutorial/using-bind-mounts/index.md
+  - Multi-Container Apps: tutorial/multi-container-apps/index.md
+  - Using Docker Compose: tutorial/using-docker-compose/index.md
+  - Image Building Best Practices: tutorial/image-building-best-practices/index.md
+  - What Next?: tutorial/what-next/index.md
