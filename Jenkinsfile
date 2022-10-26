@@ -13,9 +13,9 @@ pipeline {
 
             steps {
                 sh "docker build -t docker/getting-started ."
-                withDockerRegistry([url: "", credentialsId: "dockerbuildbot-index.docker.io"]) {
-                    sh("docker push docker/getting-started")
-                }
+                // withDockerRegistry([url: "", credentialsId: "dockerbuildbot-index.docker.io"]) {
+                //     sh("docker push docker/getting-started")
+                // }
             }
         }
     }
