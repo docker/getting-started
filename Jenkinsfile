@@ -3,7 +3,7 @@ pipeline {
         timeout(time: 1, unit: 'HOURS')
     }
     agent {
-        label 'ubuntu-1804 && amd64 && docker'
+        label 'ec2'
     }
     stages {
         stage('build and push') {
