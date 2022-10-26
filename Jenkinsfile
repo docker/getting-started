@@ -13,6 +13,7 @@ pipeline {
 
             steps {
                 sh "docker build -t docker/getting-started ."
+                sh "docker image ls"
             }
         }
         stage('build and push') {
