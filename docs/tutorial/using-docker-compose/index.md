@@ -29,7 +29,7 @@ docker-compose version
 1. At the root of the app project, create a file named `docker-compose.yml`.
 
 1. In the compose file, we'll start off by defining the schema version. In most cases, it's best to use 
-   the latest supported version. You can look at the [Compose file reference](https://docs.docker.com/compose/compose-file/)
+   the latest supported version. You can look at the [Compose file reference](https://docs.docker.com/compose/compose-file/compose-file-v3/)
    for the current schema versions and the compatibility matrix.
 
     ```yaml
