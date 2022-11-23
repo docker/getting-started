@@ -37,7 +37,7 @@ see a few flaws in the Dockerfile below. But, don't worry! We'll go over them.
 1. Create a file named `Dockerfile` in the same folder as the file `package.json` with the following contents.
 
     ```dockerfile
-    FROM node:12-alpine
+    FROM node:18-alpine
     # Adding build tools to make yarn install work on Apple silicon / arm64 machines
     RUN apk add --no-cache python2 g++ make
     WORKDIR /app
@@ -56,7 +56,7 @@ see a few flaws in the Dockerfile below. But, don't worry! We'll go over them.
 
     This command used the Dockerfile to build a new container image. You might
     have noticed that a lot of "layers" were downloaded. This is because we instructed
-    the builder that we wanted to start from the `node:12-alpine` image. But, since we
+    the builder that we wanted to start from the `node:18-alpine` image. But, since we
     didn't have that on our machine, that image needed to be downloaded.
 
     After the image was downloaded, we copied in our application and used `yarn` to 
