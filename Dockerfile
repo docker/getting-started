@@ -5,7 +5,7 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-FROM node:12-alpine AS app-base
+FROM node:18-alpine AS app-base
 WORKDIR /app
 COPY app/package.json app/yarn.lock ./
 COPY app/spec ./spec
@@ -13,13 +13,12 @@ COPY app/src ./src
 
 # Run tests to validate app
 FROM app-base AS test
-RUN apk add --no-cache python3 g++ make
 RUN yarn install
 RUN yarn test
 
 # Clear out the node_modules and create the zip
 FROM app-base AS app-zip-creator
-COPY app/package.json app/yarn.lock ./
+COPY --from=test /app/package.json /app/yarn.lock ./
 COPY app/spec ./spec
 COPY app/src ./src
 RUN apk add zip && \

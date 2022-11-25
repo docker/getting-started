@@ -30,7 +30,7 @@ This project has a `docker-compose.yml` file, which will start the mkdocs applic
 local machine and help you see changes instantly.
 
 ```bash
-docker-compose up
+docker compose up
 ```
 
 ## Contributing
