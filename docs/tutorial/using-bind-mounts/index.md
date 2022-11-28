@@ -36,12 +36,18 @@ So, let's do it!
 
 1. Make sure you don't have any previous `getting-started` containers running.
 
-1. Run the following command from the source code folder. We'll explain what's going on afterwards:
+1. Also make sure you are in app source code directory, i.e. `/path/to/getting-started/app`. If you aren't, you can `cd` into it, .e.g:
+
+    ```bash
+    cd /path/to/getting-started/app
+    ```
+
+1. Now that you are in the `getting-started/app` directory, run the following command. We'll explain what's going on afterwards:
 
     ```bash
     docker run -dp 3000:3000 \
         -w /app -v "$(pwd):/app" \
-        node:12-alpine \
+        node:18-alpine \
         sh -c "yarn install && yarn run dev"
     ```
 
@@ -50,14 +56,14 @@ So, let's do it!
     ```powershell
     docker run -dp 3000:3000 `
         -w /app -v "$(pwd):/app" `
-        node:12-alpine `
+        node:18-alpine `
         sh -c "yarn install && yarn run dev"
     ```
 
     - `-dp 3000:3000` - same as before. Run in detached (background) mode and create a port mapping
     - `-w /app` - sets the container's present working directory where the command will run from
-    - `-v "$(pwd):/app"` - bind mount (link) the host's present working directory to the container's `/app` directory
-    - `node:12-alpine` - the image to use. Note that this is the base image for our app from the Dockerfile
+    - `-v "$(pwd):/app"` - bind mount (link) the host's present `getting-started/app` directory to the container's `/app` directory. Note: Docker requires absolute paths for binding mounts, so in this example we use `pwd` for printing the absolute path of the working directory, i.e. the `app` directory, instead of typing it manually
+    - `node:18-alpine` - the image to use. Note that this is the base image for our app from the Dockerfile
     - `sh -c "yarn install && yarn run dev"` - the command. We're starting a shell using `sh` (alpine doesn't have `bash`) and
       running `yarn install` to install _all_ dependencies and then running `yarn run dev`. If we look in the `package.json`,
       we'll see that the `dev` script is starting `nodemon`.
@@ -67,9 +73,10 @@ So, let's do it!
     ```bash
     docker logs -f <container-id>
     $ nodemon src/index.js
-    [nodemon] 1.19.2
+    [nodemon] 2.0.20
     [nodemon] to restart at any time, enter `rs`
-    [nodemon] watching dir(s): *.*
+    [nodemon] watching path(s): *.*
+    [nodemon] watching extensions: js,mjs,json
     [nodemon] starting `node src/index.js`
     Using sqlite database at /etc/todos/todo.db
     Listening on port 3000
