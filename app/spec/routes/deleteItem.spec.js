@@ -18,3 +18,5 @@ test('it removes item correctly', async () => {
     expect(res.sendStatus.mock.calls[0].length).toBe(1);
     expect(res.sendStatus.mock.calls[0][0]).toBe(200);
 });
+
+function demo_use();
