@@ -4,12 +4,12 @@ application stack. The following question often arises - "Where will MySQL run? 
 container or run it separately?" In general, **each container should do one thing and do it well.** A few
 reasons:
 
-- There's a good chance you'd have to scale APIs and front-ends differently than databases
-- Separate containers let you version and update versions in isolation
+- There's a good chance you'd have to scale APIs and front-ends differently than databases.
+- Separate containers let you version and update versions in isolation.
 - While you may use a container for the database locally, you may want to use a managed service
   for the database in production. You don't want to ship your database engine with your app then.
-- Running multiple processes will require a process manager (the container only starts one process), 
-  which adds complexity to container startup/shutdown
+- Running multiple processes will require a process manager (the container only starts one process),
+  which adds complexity to container startup/shutdown.
 
 And there are more reasons. So, we will update our application to work like this:
 
@@ -37,7 +37,7 @@ For now, we will create the network first and attach the MySQL container at star
     docker network create todo-app
     ```
 
-1. Start a MySQL container and attach it the network. We're also going to define a few environment variables that the
+1. Start a MySQL container and attach it to the network. We're also going to define a few environment variables that the
   database will use to initialize the database (see the "Environment Variables" section in the [MySQL Docker Hub listing](https://hub.docker.com/_/mysql/)).
 
 === "Unix"
@@ -48,7 +48,7 @@ For now, we will create the network first and attach the MySQL container at star
         -v todo-mysql-data:/var/lib/mysql \
         -e MYSQL_ROOT_PASSWORD=secret \
         -e MYSQL_DATABASE=todos \
-        mysql:5.7
+        mysql:8.0
     ```
 === "Windows"
     ```powershell
@@ -57,7 +57,7 @@ For now, we will create the network first and attach the MySQL container at star
         -v todo-mysql-data:/var/lib/mysql `
         -e MYSQL_ROOT_PASSWORD=secret `
         -e MYSQL_DATABASE=todos `
-        mysql:5.7
+        mysql:8.0
     ```
 
     You'll also see we specified the `--network-alias` flag. We'll come back to that in just a moment.
@@ -97,6 +97,8 @@ For now, we will create the network first and attach the MySQL container at star
 
     Hooray! We have our `todos` database and it's ready for us to use!
 
+    To exit the sql terminal type `exit` in the terminal.
+
 
 ## Connecting to MySQL
 
@@ -123,7 +125,7 @@ which ships with a _lot_ of tools that are useful for troubleshooting or debuggi
     And you'll get an output like this...
 
     ```text
-    ; <<>> DiG 9.14.1 <<>> mysql
+    ; <<>> DiG 9.18.8 <<>> mysql
     ;; global options: +cmd
     ;; Got answer:
     ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32162
@@ -161,15 +163,15 @@ The todo app supports the setting of a few environment variables to specify MySQ
 
 !!! warning Setting Connection Settings via Env Vars
     While using env vars to set connection settings is generally ok for development, it is **HIGHLY DISCOURAGED**
-    when running applications in production. Diogo Monica, the former lead of security at Docker, 
+    when running applications in production. Diogo Monica, a former lead of security at Docker,
     [wrote a fantastic blog post](https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/)
-    explaining why. 
-    
+    explaining why.
+
     A more secure mechanism is to use the secret support provided by your container orchestration framework. In most cases,
     these secrets are mounted as files in the running container. You'll see many apps (including the MySQL image and the todo app)
-    also support env vars with a `_FILE` suffix to point to a file containing the file. 
-    
-    As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file 
+    also support env vars with a `_FILE` suffix to point to a file containing the variable.
+
+    As an example, setting the `MYSQL_PASSWORD_FILE` var will cause the app to use the contents of the referenced file
     as the connection password. Docker doesn't do anything to support these env vars. Your app will need to know to look for
     the variable and get the file contents.
 
@@ -188,7 +190,7 @@ With all of that explained, let's start our dev-ready container!
       -e MYSQL_USER=root \
       -e MYSQL_PASSWORD=secret \
       -e MYSQL_DB=todos \
-      node:12-alpine \
+      node:18-alpine \
       sh -c "yarn install && yarn run dev"
     ```
 === "Windows"
@@ -200,7 +202,7 @@ With all of that explained, let's start our dev-ready container!
       -e MYSQL_USER=root `
       -e MYSQL_PASSWORD=secret `
       -e MYSQL_DB=todos `
-      node:12-alpine `
+      node:18-alpine `
       sh -c "yarn install && yarn run dev"
     ```
 
@@ -210,9 +212,10 @@ With all of that explained, let's start our dev-ready container!
     ```plaintext hl_lines="7"
     # Previous log messages omitted
     $ nodemon src/index.js
-    [nodemon] 1.19.2
+    [nodemon] 2.0.20
     [nodemon] to restart at any time, enter `rs`
-    [nodemon] watching dir(s): *.*
+    [nodemon] watching path(s): *.*
+    [nodemon] watching extensions: js,mjs,json
     [nodemon] starting `node src/index.js`
     Connected to mysql db at host mysql
     Listening on port 3000
@@ -224,7 +227,7 @@ With all of that explained, let's start our dev-ready container!
    is **secret**.
 
     ```bash
-    docker exec -ti <mysql-container-id> mysql -p todos
+    docker exec -it <mysql-container-id> mysql -p todos
     ```
 
     And in the mysql shell, run the following:

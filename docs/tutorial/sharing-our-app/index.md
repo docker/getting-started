@@ -36,7 +36,8 @@ an example command that you will need to run to push to this repo.
 
     To fix this, we need to "tag" our existing image we've built to give it another name.
 
-1. Login to the Docker Hub using the command `docker login -u YOUR-USER-NAME`.
+1. Login to Docker Hub by either clicking on the "Sign In" button in Docker Desktop or using the 
+   command `docker login -u YOUR-USER-NAME`.
 
 1. Use the `docker tag` command to give the `getting-started` image a new name. Be sure to swap out
    `YOUR-USER-NAME` with your Docker ID.
@@ -58,7 +59,7 @@ an example command that you will need to run to push to this repo.
 Now that our image has been built and pushed into a registry, let's try running our app on a brand
 new instance that has never seen this container image! To do this, we will use Play with Docker.
 
-1. Open your browser to [Play with Docker](http://play-with-docker.com).
+1. Open your browser to [Play with Docker](https://labs.play-with-docker.com/).
 
 1. Log in with your Docker Hub account.
 
