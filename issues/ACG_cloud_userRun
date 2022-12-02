@@ -1,0 +1,64 @@
+[cloud_user@b714aafdf71c docker-started]$ git clone https://github.com/docker/getting-started.git
+Cloning into 'getting-started'...
+remote: Enumerating objects: 887, done.
+remote: Counting objects: 100% (94/94), done.
+remote: Compressing objects: 100% (73/73), done.
+remote: Total 887 (delta 29), reused 75 (delta 19), pack-reused 793
+Receiving objects: 100% (887/887), 5.20 MiB | 0 bytes/s, done.
+Resolving deltas: 100% (476/476), done.
+[cloud_user@b714aafdf71c docker-started]$ cd getting-started/app
+[cloud_user@b714aafdf71c app]$ clear
+
+
+
+
+
+
+
+
+
+
+
+
+
+[cloud_user@b714aafdf71c app]$ touch Dockerfile
+[cloud_user@b714aafdf71c app]$ vi Dockerfile 
+[cloud_user@b714aafdf71c app]$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/6 : FROM node:18-alpine
+18-alpine: Pulling from library/node
+ca7dd9ec2225: Pull complete 
+55371e6747e8: Pull complete 
+694d6b1b2d1b: Pull complete 
+71f41f5ff77d: Pull complete 
+Digest: sha256:9eff44230b2fdcca57a73b8f908c8029e72d24dd05cac5339c79d3dedf6b208b
+Status: Downloaded newer image for node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/6 : WORKDIR /app
+ ---> Running in ea022eaf0396
+Removing intermediate container ea022eaf0396
+ ---> 9650e81d7192
+Step 3/6 : COPY . .
+ ---> fb8975745fec
+Step 4/6 : RUN yarn install --production
+ ---> Running in 69f5e577d68c
+yarn install v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+[4/4] Building fresh packages...
+Done in 11.75s.
+Removing intermediate container 69f5e577d68c
+ ---> 54777882a729
+Step 5/6 : CMD ["node", "src/index.js"]
+ ---> Running in fe5f68118423
+Removing intermediate container fe5f68118423
+ ---> 1044825b4a1b
+Step 6/6 : EXPOSE 3000
+ ---> Running in ce2985a770f3
+Removing intermediate container ce2985a770f3
+ ---> af292107e2b7
+Successfully built af292107e2b7
+Successfully tagged getting-started:latest
+[cloud_user@b714aafdf71c app]$ 
+

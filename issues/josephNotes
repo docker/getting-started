@@ -1,0 +1,111 @@
+ ---> Running in c768c4c0a467
+yarn install v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+error An unexpected error occurred: "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz: getaddrinfo EAI_AGAIN registry.yarnpkg.com".
+info If you think this is a bug, please open a bug report with the information provided in "/app/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+The command '/bin/sh -c yarn install --production' returned a non-zero code: 1
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ ^C
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/8 : FROM node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/8 : WORKDIR /app
+ ---> Using cache
+ ---> 5179df780ee6
+Step 3/8 : COPY . .
+ ---> 87bff5bf013a
+Step 4/8 : ADD company_cert.pem /etc/ssl/certs/company_cert.pem
+ADD failed: file not found in build context or excluded by .dockerignore: stat company_cert.pem: file does not exist
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/6 : FROM node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 5179df780ee6
+Step 3/6 : COPY . .
+ ---> Using cache
+ ---> 73afaa3bee63
+Step 4/6 : RUN yarn install --production
+ ---> Running in 69a67e0da592
+yarn install v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+error An unexpected error occurred: "https://registry.yarnpkg.com/express/-/express-4.18.2.tgz: getaddrinfo EAI_AGAIN registry.yarnpkg.com".
+info If you think this is a bug, please open a bug report with the information provided in "/app/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+The command '/bin/sh -c yarn install --production' returned a non-zero code: 1
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/9 : FROM node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/9 : WORKDIR /app
+ ---> Using cache
+ ---> 5179df780ee6
+Step 3/9 : COPY . .
+ ---> 181dc6b686f2
+Step 4/9 : RUN "yarn config set strict-ssl false -g && yarn install --production"
+ ---> Running in 16e019e55976
+/bin/sh: yarn config set strict-ssl false -g && yarn install --production: not found
+The command '/bin/sh -c "yarn config set strict-ssl false -g && yarn install --production"' returned a non-zero code: 127
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/6 : FROM node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 5179df780ee6
+Step 3/6 : COPY . .
+ ---> Using cache
+ ---> 73afaa3bee63
+Step 4/6 : RUN yarn install --production
+ ---> Running in 80d75dac2b99
+yarn install v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+error An unexpected error occurred: "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz: getaddrinfo EAI_AGAIN registry.yarnpkg.com".
+info If you think this is a bug, please open a bug report with the information provided in "/app/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+The command '/bin/sh -c yarn install --production' returned a non-zero code: 1
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/6 : FROM node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 5179df780ee6
+Step 3/6 : COPY . .
+ ---> 59a692b4304a
+Step 4/6 : RUN yarn install --latest
+ ---> Running in 0afb32565162
+yarn install v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+error An unexpected error occurred: "https://registry.yarnpkg.com/express/-/express-4.18.2.tgz: getaddrinfo EAI_AGAIN registry.yarnpkg.com".
+info If you think this is a bug, please open a bug report with the information provided in "/app/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+The command '/bin/sh -c yarn install --latest' returned a non-zero code: 1
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ docker build -t getting-started .
+Sending build context to Docker daemon  4.626MB
+Step 1/6 : FROM node:18-alpine
+ ---> 0fa08f92e64b
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 5179df780ee6
+Step 3/6 : COPY . .
+ ---> 817ec3034793
+Step 4/6 : RUN yarn install
+ ---> Running in 3ca0bf9eadfe
+yarn install v1.22.19
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+error An unexpected error occurred: "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-5.0.1.tgz: getaddrinfo EAI_AGAIN registry.yarnpkg.com".
+info If you think this is a bug, please open a bug report with the information provided in "/app/yarn-error.log".
+info Visit https://yarnpkg.com/en/docs/cli/install for documentation about this command.
+The command '/bin/sh -c yarn install' returned a non-zero code: 1
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ ^C
+joseph@cloudVB:~/GitHub_Repo/getting-started/app$ 
+ *  History restored 
+
