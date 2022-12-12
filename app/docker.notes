@@ -1,0 +1,15 @@
+#build commands
+docker build -t getting-started .
+
+#run commands
+docker run -dp 3000:3000 getting-started
+
+
+#add named data file
+docker volume create todo-db
+
+#make image with shared storage
+docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+
+#to fine file locations
+docker volume inspect
