@@ -151,6 +151,8 @@ which ships with a _lot_ of tools that are useful for troubleshooting or debuggi
     What this means is... our app only simply needs to connect to a host named `mysql` and it'll talk to the
     database! It doesn't get much simpler than that!
 
+    When you're done, run `exit` to close out of the container.
+
 
 ## Running our App with MySQL
 
