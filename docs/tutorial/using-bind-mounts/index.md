@@ -34,7 +34,7 @@ To run our container to support a development workflow, we will do the following
 
 So, let's do it!
 
-1. Make sure you don't have any previous `getting-started` containers running.
+1. Make sure you don't have any of your own `getting-started` containers running (only the tutorial itself should be running).
 
 1. Also make sure you are in app source code directory, i.e. `/path/to/getting-started/app`. If you aren't, you can `cd` into it, .e.g:
 
