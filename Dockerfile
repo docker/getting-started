@@ -11,7 +11,7 @@ COPY app/package.json app/yarn.lock ./
 COPY app/spec ./spec
 COPY app/src ./src
 
-# Run tests to validate app
+# Run tests to validate APP
 FROM app-base AS test
 RUN yarn install
 RUN yarn test
