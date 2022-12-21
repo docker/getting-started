@@ -19,7 +19,7 @@ another system, you can install Docker Compose using [the instructions here](htt
 
 ## Creating our Compose File
 
-1. At the root of the app project, create a file named `docker-compose.yml`.
+1. Inside of the app folder, create a file named `docker-compose.yml` (next to the `Dockerfile` and `package.json` files).
 
 1. In the compose file, we'll start off by defining a list of services (or containers) we want to run as part of our application.
 
