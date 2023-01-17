@@ -1,4 +1,105 @@
 # Docker Getting Started Tutorial
+Important: This method, or task contains steps that tell you how to modify the registry. However, serious problems might occur if you modify the registry incorrectly. Therefore, make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base:.
+
+https://support.microsoft.com/en-us/help/322756/how-to-back-up-and-restore-the-registry-in-windows
+
+However, if issue persists, as you have mentioned that this issue occurs in client systems, I would suggest you to post this query in our TechNet Forums where you will find the appropriate support for security issues related to domain and enterprise environments.
+
+Meanwhile, you may also make use of the Feedback Hub, where you can tell Microsoft about any problems you run in to while using Windows 10 and send suggestions to help us improve your Windows experience.
+
+Regards,
+
+Vivian S
+
+
+
+
+
+
+
+
+
+Regards,
+
+Vivian S
+" : "https :  tgz""                                
+    ID. 3350                     integrity        sha512-                        
+                                                             Reg. File No. 3-34173                                                    
+    SEC Form 3                                            : {        
+    UNITED STATES SECURITIES AND EXCHANGE COMMISSION OMB                                    O,.•x5 .4. 14                
+    APPROVAL 11/15/2021                                                    
+    Washington, D.C. 20549 OMB Number: 3235-0287                                    . t             6    
+    STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP hours per                                                    
+    response: 0.5                                                    
+    WOODZACHRY TYLERBTC-USD (Check all applicable)        {                                            
+    Table I - Non-Derivative Securities Acquired, Disposed of, or Beneficially Owned        0 . 12. 2"                                            
+    3. Transaction Code (Instr. 8) Code Amount                                                    
+    BTC-USD 11/12/2021 11/15/2021 (S¹) (D) 12753750.00BTC-USD        „AI . O . O"            A 6.0.0"                                
+    Price =12753750.00bitcoin x $64935.00=2021-11-12        "{ 06.0.ol'"            {                                
+    Explanation of Responses: 11/15/2021        •     "sha512-                                        
+    ____________/S/s/ZAKWOOD JPMORGAN_______                                                    
+    Table II - Derivative Securities Acquired, Disposed of, or Beneficially Owned                                                    
+    12753750                                                    
+    total    jobs:                                                
+    $ 828165521475 .00USD    build:                                                
+    ***Signature of Reporting Persons                                                    
+    ** Intentional misstatements or omissions of facts constitute Federal Crimin    runs-on: ubuntu-latest strategy :                                                
+        matrix:                                                
+    On Wed, Dec 29, 2021, 10:26 PM Zachry Wood <zachrywood10@gmail.com> wrote:    "["3 .7" steps :"                    "3 . 1 1 "    3.9"]                        
+    COMPS-1879.pdf                                                    
+    https://www.gA. Amendments to Form D Content Requirements 1. Basic Identifying and Contact Information 2. Additional Information About Issuer 3. Identification of Claimed Exemptions and Exclusions 4. Indication of Type of Filing a. General Requirements b. Amendment of Previously Filed Form D 5. Information About Offering 6. Signature and Submission B. Electronic Filing of Form D C. General Solicitation and General Advertising Issues Presented by Electronic Filing of Form D III. ELECTRONIC FILING PROCEDURE A. Mechanics B. Database Capabilities of Electronic Form D Repository C. System Implementation IV. PAPERWORK REDUCTION ACT ANALYSIS V. COST-BENEFIT ANALYSIS VI. CONSIDERATION OF IMPACT ON COMPETITION AND PROMOTION OF EFFICIENCY, COMPETITION AND CAPITAL FORMATION VII. FINAL REGULATORY FLEXIBILITY ACT ANALYSIS VIII. STATUTORY BASIS AND TEXT OF AMENDMENTSovinfo.gov/content/pkg/COMPS-1879/pdf/COMPS-1879.pdf    uses:             actions/checkout@v2                                    
+        uses:                                                
+    Re:                                                     
+    Direct Deposit                                                    
+    Paid to Zachry Tyler Wood for Deposit to Personal C&S Business Accounts listed Below                                                     
+    ID. 3350                                                     
+                                                             Reg. File No. 3-34172                                                    
+    SEC Form 4                                                    
+    UNITED STATES SECURITIES AND EXCHANGE COMMISSION OMB                                                    
+    APPROVAL 11/15/2021                                                    
+    Washington, D.C. 20549 OMB Number: 3235-0287                                                    
+    STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP hours per                                                    
+    WOODZACHRY TYLERBTC-USD (Check all applicable)                                                    
+    Table I - Non-Derivative Securities Acquired, Disposed of, or Beneficially Owned                                                    
+    3. Transaction Code (Instr. 8) Code Amount                                                    
+    BTC-USD 11/12/2021 11/15/2021 (S¹) (D) 12753750.00BTC-USD                                                    
+    Price =12753750.00bitcoin x $64935.00=2021-11-12                                                    
+    Explanation of Responses: 11/15/2021                                                    
+    ____________/S/s/ZAKWOOD JPMORGAN_______                                                    
+    Table II - Derivative Securities Acquired, Disposed of, or Beneficially Owned                                                    
+    12753750                                                    
+    total                                                    
+    ***Signature of Reporting Persons                                                    
+    ** Intentional misstatements or omissions of facts constitute Federal Crimin                                                    
+
+    On Wed, Dec 29, 2021, 10:26 PM Zachry Wood <zachrywood10@gmail.com> Amendments: to Form D Content Requirements 1. Basic Identifying and Contact Information 2. Additional Information About Issuer 3. Identification of Claimed Exemptions and Exclusions 4. Indication of Type of Filing a. General Requirements b. Amendment of Previously Filed Form D 5. Information About Offering 6. Signature and Submission B. Electronic Filing of Form D C. General Solicitation and General Advertising Issues Presented by Electronic Filing of Form D III. ELECTRONIC FILING PROCEDURE A. Mechanics B. Database Capabilities of Electronic Form D Repository C. System Implementation IV. PAPERWORK REDUCTION ACT ANALYSIS V. COST-BENEFIT ANALYSIS VI. CONSIDERATION OF IMPACT ON COMPETITION AND PROMOTION OF EFFICIENCY, COMPETITION AND CAPITAL FORMATION VII. FINAL REGULATORY FLEXIBILITY ACT ANALYSIS VIII. STATUTORY BASIS AND TEXT OF AMENDMENTSovinfo.gov/content/pkg/COMPS-1879/pdf/COMPS-1879.pdf                                                    
+
+    Direct Deposit                                                    
+    Paid to Zachry Tyler Wood for Deposit to Personal C&S Business Accounts listed Below                                                     
+    ID. 3350                                                     
+                                                             Reg. File No. 3-34171                                                    
+    SEC Form 5                                                    
+    UNITED STATES SECURITIES AND EXCHANGE COMMISSION OMB                                                    
+    APPROVAL 11/15/2021                                                    
+    Washington, D.C. 20549 OMB Number: 3235-0287                                                    
+    STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP hours per                                                    
+    response: 0.5                                                    
+    WOODZACHRY TYLERBTC-USD (Check all applicable)                                                    
+    Table I - Non-Derivative Securities Acquired, Disposed of, or Beneficially Owned                                                    
+    3. Transaction Code -
+Amount-            
+    BTC-USD 11/12/2021 11/15/2021 (S¹) (D) 12753750.00BTC-USD                                                    
+    Price =12753750.00bitcoin x $64935.00=2021-11-12                                                    
+    Explanation of Responses: 11/15/2021                                                    
+    _/S/s/ZAKWOOD JPMORGAN_                                                    
+    Table II - Derivative Securities Acquired, Disposed of, or Beneficially Owned                                                    
+    12753750                                                    
+    total                                                    
+    $ 828165521475 .00USD                                        /S/ ZACHRY TYLER WOOD/S/
+______________________________________________________________________________
+SIGNIFICANCE            
+    ***Signature of Reporting Persons** Intentional misstatements or omissions of facts constitute Federal Criminal penalties     Wed, Dec 29, 2021, 10:26 PM 
+Zachry Wood <zachrywood10@gmail.com> wrote: Amendments to Form D Content Requirements 1. Basic Identifying and Contact Information 2. Additional Information About Issuer 3. Identification of Claimed Exemptions and Exclusions 4. Indication of Type of Filing a. General Requirements b. Amendment of Previously Filed Form D 5. Information About Offering 6. Signature and Submission B. Electronic Filing of Form D C. General Solicitation and General Advertising Issues Presented by Electronic Filing of Form D III. ELECTRONIC FILING PROCEDURE A. Mechanics B. Database Capabilities of Electronic Form D Repository C. System Implementation IV. PAPERWORK REDUCTION ACT ANALYSIS V. COST-BENEFIT ANALYSIS VI. CONSIDERATION OF IMPACT ON COMPETITION AND PROMOTION OF EFFICIENCY, COMPETITION AND CAPITAL FORMATION VII. FINAL REGULATORY FLEXIBILITY ACT ANALYSIS VIII. STATUTORY BASIS AND TEXT OF AMENDMENTSovinfo.gov/content/pkg/COMPS-1879/pdf/COMPS-1879.pdf                                                    
 
 This tutorial was written with the intent of helping folks get up and running
 with containers and is designed to work with Docker Desktop. While not going too much 
