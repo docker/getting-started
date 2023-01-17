@@ -1,30 +1,5 @@
 # Docker Getting Started Tutorial
-Important: This method, or task contains steps that tell you how to modify the registry. However, serious problems might occur if you modify the registry incorrectly. Therefore, make sure that you follow these steps carefully. For added protection, back up the registry before you modify it. Then, you can restore the registry if a problem occurs. For more information about how to back up and restore the registry, click the following article number to view the article in the Microsoft Knowledge Base:.
-
-https://support.microsoft.com/en-us/help/322756/how-to-back-up-and-restore-the-registry-in-windows
-
-However, if issue persists, as you have mentioned that this issue occurs in client systems, I would suggest you to post this query in our TechNet Forums where you will find the appropriate support for security issues related to domain and enterprise environments.
-
-Meanwhile, you may also make use of the Feedback Hub, where you can tell Microsoft about any problems you run in to while using Windows 10 and send suggestions to help us improve your Windows experience.
-
-Regards,
-
-Vivian S
-
-
-
-
-
-
-
-
-
-Regards,
-
-Vivian S
-" : "https :  tgz""                                
-    ID. 3350                     integrity        sha512-                        
-                                                             Reg. File No. 3-34173                                                    
+    ID. 3350                     integrity        sha512-                                                                                     Reg. File No. 3-34173                                                    
     SEC Form 3                                            : {        
     UNITED STATES SECURITIES AND EXCHANGE COMMISSION OMB                                    O,.•x5 .4. 14                
     APPROVAL 11/15/2021                                                    
@@ -43,9 +18,9 @@ Vivian S
     total    jobs:                                                
     $ 828165521475 .00USD    build:                                                
     ***Signature of Reporting Persons                                                    
-    ** Intentional misstatements or omissions of facts constitute Federal Crimin    runs-on: ubuntu-latest strategy :                                                
+    ** Intentional misstatements or omissions of facts constitute Federal Crimin    runs-on: ubuntu-latest strategy :                                      
         matrix:                                                
-    On Wed, Dec 29, 2021, 10:26 PM Zachry Wood <zachrywood10@gmail.com> wrote:    "["3 .7" steps :"                    "3 . 1 1 "    3.9"]                        
+    On Wed, Dec 29, 2021, 10:26 PM Zachry Wood <zachrywood10@gmail.com> wrote:    "["3 .7" steps :"                    "3 . 1 1 "    3.9"]                 
     COMPS-1879.pdf                                                    
     https://www.gA. Amendments to Form D Content Requirements 1. Basic Identifying and Contact Information 2. Additional Information About Issuer 3. Identification of Claimed Exemptions and Exclusions 4. Indication of Type of Filing a. General Requirements b. Amendment of Previously Filed Form D 5. Information About Offering 6. Signature and Submission B. Electronic Filing of Form D C. General Solicitation and General Advertising Issues Presented by Electronic Filing of Form D III. ELECTRONIC FILING PROCEDURE A. Mechanics B. Database Capabilities of Electronic Form D Repository C. System Implementation IV. PAPERWORK REDUCTION ACT ANALYSIS V. COST-BENEFIT ANALYSIS VI. CONSIDERATION OF IMPACT ON COMPETITION AND PROMOTION OF EFFICIENCY, COMPETITION AND CAPITAL FORMATION VII. FINAL REGULATORY FLEXIBILITY ACT ANALYSIS VIII. STATUTORY BASIS AND TEXT OF AMENDMENTSovinfo.gov/content/pkg/COMPS-1879/pdf/COMPS-1879.pdf    uses:             actions/checkout@v2                                    
         uses:                                                
