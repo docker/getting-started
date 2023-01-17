@@ -6,13 +6,15 @@
     Washington, D.C. 20549 OMB Number: 3235-0287                                    . t             6    
     STATEMENT OF CHANGES IN BENEFICIAL OWNERSHIP hours per                                                    
     response: 0.5                                                    
-    WOODZACHRY TYLERBTC-USD (Check all applicable)        {                                            
+    WOOD ZACHRY TYLER
+    BTC-USD (Check all applicable)        
+    {                                            
     Table I - Non-Derivative Securities Acquired, Disposed of, or Beneficially Owned        0 . 12. 2"                                            
     3. Transaction Code (Instr. 8) Code Amount                                                    
     BTC-USD 11/12/2021 11/15/2021 (S¹) (D) 12753750.00BTC-USD        „AI . O . O"            A 6.0.0"                                
-    Price =12753750.00bitcoin x $64935.00=2021-11-12        "{ 06.0.ol'"            {                                
-    Explanation of Responses: 11/15/2021        •     "sha512-                                        
-    ____________/S/s/ZAKWOOD JPMORGAN_______                                                    
+    Price =12753750.00bitcoin x $64935.00=2021-11-12        "{ 06.0.ol'"            
+    {                                
+    Explanation of Responses: 11/15/2021        •     "'?''-                                        
     Table II - Derivative Securities Acquired, Disposed of, or Beneficially Owned                                                    
     12753750                                                    
     total    jobs:                                                
