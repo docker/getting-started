@@ -9,7 +9,7 @@ repo_url: https://github.com/docker/getting-started
 edit_uri: ""
 
 # Copyright
-copyright: 'Copyright &copy; 2020 Docker'
+copyright: 'Copyright &copy; 2020-2022 Docker'
 
 # Configuration
 theme:
