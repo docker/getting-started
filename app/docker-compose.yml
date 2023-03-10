@@ -8,7 +8,7 @@ services:
     volumes:
       - ./:/app
     environment:
-      MYSQL_HOST: 192.168.0.13
+      MYSQL_HOST: 192.168.0.13:3306
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
