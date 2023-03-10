@@ -3,12 +3,12 @@ services:
     image: node:18-alpine
     command: sh -c "yarn install && yarn run dev"
     ports:
-      - 192.168.0.12:3000:3000
+      - 3000:3000
     working_dir: /app
     volumes:
       - ./:/app
     environment:
-      MYSQL_HOST: 192.168.0.13
+      MYSQL_HOST: backend
       MYSQL_USER: root
       MYSQL_PASSWORD: secret
       MYSQL_DB: todos
@@ -20,8 +20,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: secret
       MYSQL_DATABASE: todos
-      ports:
-        - 192.168.0.13:3306:3306
 
 volumes:
   todo-mysql-data:
