@@ -1,7 +1,7 @@
 # Docker Getting Started Tutorial
 
 This tutorial was written with the intent of helping folks get up and running
-with containers and is designed to work with Docker Desktop. While not going too much 
+with containers and is designed to work with Docker Desktop. While not going too much
 into depth, it covers the following topics:
 
 - Running your first container
@@ -38,7 +38,7 @@ docker compose up
 
 If you find typos or other issues with the tutorial, feel free to create a PR and suggest fixes!
 
-If you have ideas on how to make the tutorial better or want to suggest adding new content, please open an 
+If you have ideas on how to make the tutorial better or want to suggest adding new content, please open an
 issue first before working on your idea. While we love input, we want to keep the tutorial scoped to new-comers.
 As such, we may reject ideas for more advanced requests and don't want you to lose any work you might
 have done. So, ask first and we'll gladly hear your thoughts!
