@@ -20,10 +20,10 @@ into depth, it covers the following topics:
 If you wish to run the tutorial, you can use the following command after installing Docker Desktop:
 
 ```bash
-docker run -d -p 80:80 docker/getting-started
+docker run -d -p 3000:3000 docker/getting-started
 ```
 
-Once it has started, you can open your browser to [http://localhost](http://localhost).
+Once it has started, you can open your browser to [http://localhost:3000](http://localhost:3000).
 
 ## Development
 
