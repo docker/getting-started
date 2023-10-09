@@ -3,3 +3,7 @@ mkdocs-material==4.6.3
 mkdocs-minify-plugin==0.2.3
 pygments==2.7.4
 pymdown-extensions==7.0
+
+openai
+IPython
+python-dotenv
