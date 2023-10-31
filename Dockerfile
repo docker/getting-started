@@ -36,5 +36,6 @@ RUN mkdocs build
 # Extract the static content from the build
 # and use a nginx image to serve the content
 FROM --platform=$TARGETPLATFORM nginx:alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=app-zip-creator /app.zip /usr/share/nginx/html/assets/app.zip
 COPY --from=build /app/site /usr/share/nginx/html
