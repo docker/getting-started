@@ -9,6 +9,12 @@ Let's first explain the command that you just ran. In case you forgot,
 here's the command:
 
 ```cli
+docker run -d -p 80:80 allanl95/getting-started-bootdotdev
+```
+
+You can try dockers official image by running: (Note Boot.dev's HTTP tests will not work against Docker's official image)
+
+```cli
 docker run -d -p 80:80 docker/getting-started
 ```
 
