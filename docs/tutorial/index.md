@@ -12,11 +12,13 @@ here's the command:
 docker run -d -p 80:80 allanl95/getting-started-bootdotdev
 ```
 
-You can try dockers official image by running: (Note Boot.dev's HTTP tests will not work against Docker's official image)
+You can try dockers official image by running:
 
 ```cli
 docker run -d -p 80:80 docker/getting-started
 ```
+
+(Note Boot.dev's HTTP tests will not work against Docker's official image)
 
 You'll notice a few flags being used. Here's some more info on them:
 
