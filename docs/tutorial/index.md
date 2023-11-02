@@ -8,17 +8,11 @@ Congratulations! You have started the container for this tutorial!
 Let's first explain the command that you just ran. In case you forgot,
 here's the command:
 
+This is our fork of Docker's getting started image (our fork adds CORS headers so our tests can connect)
+
 ```cli
 docker run -d -p 80:80 allanl95/getting-started-bootdotdev
 ```
-
-You can try dockers official image by running:
-
-```cli
-docker run -d -p 80:80 docker/getting-started
-```
-
-(Note Boot.dev's HTTP tests will not work against Docker's official image)
 
 You'll notice a few flags being used. Here's some more info on them:
 
