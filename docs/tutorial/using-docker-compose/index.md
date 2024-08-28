@@ -109,10 +109,10 @@ docker run -dp 3000:3000 \
         volumes:
           - ./:/app
         environment:
-          MYSQL_HOST: mysql
-          MYSQL_USER: root
-          MYSQL_PASSWORD: secret
-          MYSQL_DB: todos
+          MYSQL_HOST=mysql
+          MYSQL_USER=root
+          MYSQL_PASSWORD=secret
+          MYSQL_DB=todos
     ```
 
   
@@ -169,8 +169,8 @@ docker run -d \
         volumes:
           - todo-mysql-data:/var/lib/mysql
         environment: 
-          MYSQL_ROOT_PASSWORD: secret
-          MYSQL_DATABASE: todos
+          MYSQL_ROOT_PASSWORD=secret
+          MYSQL_DATABASE=todos
     
     volumes:
       todo-mysql-data:
@@ -190,18 +190,18 @@ services:
     volumes:
       - ./:/app
     environment:
-      MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: secret
-      MYSQL_DB: todos
+      MYSQL_HOST=mysql
+      MYSQL_USER=root
+      MYSQL_PASSWORD=secret
+      MYSQL_DB=todos
 
   mysql:
     image: mysql:8.0
     volumes:
       - todo-mysql-data:/var/lib/mysql
     environment: 
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: todos
+      MYSQL_ROOT_PASSWORD=secret
+      MYSQL_DATABASE=todos
 
 volumes:
   todo-mysql-data:
