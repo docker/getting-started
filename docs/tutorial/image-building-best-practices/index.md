@@ -111,7 +111,19 @@ applications, those dependencies are defined in the `package.json` file. So what
 install the dependencies, and _then_ copy in everything else? Then, we only recreate the yarn dependencies if there was
 a change to the `package.json`. Make sense?
 
-1. Update the Dockerfile to copy in the `package.json` first, install dependencies, and then copy everything else in.
+1. To make your Docker container work properly, you need to update a file called the Dockerfile. Here's what you should do:
+
+    Specify the base image for the Docker image. In this case, we'll use the `node:18-alpine` image.
+
+    Set the working directory for the Docker container to `/app`.
+
+    Copy the package.json file and yarn.lock from your local machine into the Docker container's `/app` directory.
+
+    Install all the dependencies that your project needs using Yarn package manager within the Docker container with the `yarn install --production` command.
+
+    Copy all the other files and folders that your project uses in the working directory into the Docker container's `/app` directory.
+
+    Finally, set the command to run when the Docker container starts.
 
     ```dockerfile hl_lines="3 4 5"
     FROM node:18-alpine
