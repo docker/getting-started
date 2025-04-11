@@ -299,4 +299,16 @@
   .md-typeset .footnote-ref:before {
     border-color: #888484 !important;
   }
+
+  code span.gd {
+    background-color: red !important;
+  }
+
+  code span.gi {
+    background-color: green !important;
+  }
+
+  .highlight pre {
+    background-color: hsla(0,0%,5%,.5);
+  }
 }
