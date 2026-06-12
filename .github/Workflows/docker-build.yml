@@ -1,0 +1,12 @@
+name: ci
+
+on: ["push"]
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2.7.0
+      - name: Verify
+        run: ls
