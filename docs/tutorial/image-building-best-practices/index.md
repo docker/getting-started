@@ -1,12 +1,12 @@
 ## Security Scanning
 
-When you have built an image, it is good practice to scan it for security vulnerabilities using the `docker scan` command.
+When you have built an image, it is good practice to scan it for security vulnerabilities using the `docker scout` command.
 Docker has partnered with [Snyk](http://snyk.io) to provide the vulnerability scanning service.
 
 For example, to scan the `getting-started` image you created earlier in the tutorial, you can just type
 
 ```bash
-docker scan getting-started
+docker scout cves getting-started
 ```
 
 The scan uses a constantly updated database of vulnerabilities, so the output you see will vary as new
@@ -34,7 +34,7 @@ vulnerabilities are discovered, but it might look something like this:
 The output lists the type of vulnerability, a URL to learn more, and importantly which version of the relevant library
 fixes the vulnerability.
 
-There are several other options, which you can read about in the [docker scan documentation](https://docs.docker.com/engine/scan/).
+There are several other options, which you can read about in the [docker scout documentation](https://docs.docker.com/scout/).
 
 As well as scanning your newly built image on the command line, you can also [configure Docker Hub](https://docs.docker.com/docker-hub/vulnerability-scanning/)
 to scan all newly pushed images automatically, and you can then see the results in both Docker Hub and Docker Desktop.
