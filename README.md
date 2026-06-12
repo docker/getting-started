@@ -25,6 +25,10 @@ docker run -d -p 80:80 docker/getting-started
 
 Once it has started, you can open your browser to [http://localhost](http://localhost).
 
+**Troubleshooting:**
+
+If you run into an error saying "Ports are not available", it might be because port 80 is already in use on your computer. In that case, you can change the first port number in "80:80" to an available port, eg.: "81:80". Then you'll need to access the container via [http://localhost:81](http://localhost:81).
+
 ## Development
 
 This project has a `docker-compose.yml` file, which will start the mkdocs application on your
