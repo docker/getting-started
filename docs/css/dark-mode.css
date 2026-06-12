@@ -3,6 +3,50 @@
     color: rgba(255, 255, 255, 0.75) !important;
     background-color: #36393e !important;
   }
+  
+  .md-typeset code, .md-typeset pre, .md-typeset pre>code {
+  	background: black;
+	box-shadow: none;
+  }
+  
+  .codehilite .gd, .md-typeset .highlight .gd {
+	  background-color: hotpink !important;
+	  color: black;
+  }
+  
+  .codehilite .gi, .md-typeset .highlight .gi {
+	  background-color: deepskyblue !important;
+	  color: black;
+  }
+  
+  .codehilite .k, .md-typeset .highlight .k {
+	  color: cyan;
+  }
+  
+  .codehilite .nv, .codehilite .vc, .codehilite .vg, .codehilite .vi, .md-typeset .highlight .nv, .md-typeset .highlight .vc, .md-typeset .highlight .vg, .md-typeset .highlight .vi {
+	  color: white;
+  }
+  
+  .codehilite .nt, .md-typeset .highlight .nt {
+	  color: white;
+  }
+  
+  .codehilite .s, .codehilite .sb, .codehilite .sc, .md-typeset .highlight .s, .md-typeset .highlight .sb, .md-typeset .highlight .sc {
+	  color: orange;
+  }
+  
+  .codehilite .s2, .md-typeset .highlight .s2 {
+  color: yellow;
+}
+ 
+ .codehilite .na, .codehilite .nb, .md-typeset .highlight .na, .md-typeset .highlight .nb {
+	 color: cyan;
+ }
+  
+  .codehilite .il, .codehilite .m, .codehilite .mf, .codehilite .mh, .codehilite .mi, .codehilite .mo, .md-typeset .highlight .il, .md-typeset .highlight .m, .md-typeset .highlight .mf, .md-typeset .highlight .mh, .md-typeset .highlight .mi, .md-typeset .highlight .mo {
+	  color: lime;
+  }
+  
 
   article img {
     box-shadow: 0 0 1em #000;
