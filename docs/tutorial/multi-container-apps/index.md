@@ -211,7 +211,7 @@ With all of that explained, let's start our dev-ready container!
 1. If we look at the logs for the container (`docker logs <container-id>`), we should see a message indicating it's
    using the mysql database.
 
-    ```plaintext hl_lines="7"
+    ```plaintext hl_lines="8"
     # Previous log messages omitted
     $ nodemon src/index.js
     [nodemon] 2.0.20
