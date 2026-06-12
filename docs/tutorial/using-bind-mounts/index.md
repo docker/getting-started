@@ -44,6 +44,8 @@ So, let's do it!
 
 1. Now that you are in the `getting-started/app` directory, run the following command. We'll explain what's going on afterwards:
 
+=== "Unix"
+
     ```bash
     docker run -dp 3000:3000 \
         -w /app -v "$(pwd):/app" \
@@ -51,7 +53,7 @@ So, let's do it!
         sh -c "yarn install && yarn run dev"
     ```
 
-    If you are using PowerShell then use this command.
+=== "Windows"
 
     ```powershell
     docker run -dp 3000:3000 `
