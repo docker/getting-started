@@ -150,7 +150,8 @@ need to have root access to access this directory from the host. But, that's whe
 !!! info "Accessing Volume data directly on Docker Desktop"
     While running in Docker Desktop, the Docker commands are actually running inside a small VM on your machine.
     If you wanted to look at the actual contents of the Mountpoint directory, you would need to first get inside
-    of the VM.
+    of the VM. In WSL2, Docker Desktop for Windows, the repository is located at:
+    \\wsl$\docker-desktop\mnt\host\wsl\docker-desktop-data\data\docker\volumes\todo-db\_data
 
 ## Recap
 
