@@ -78,7 +78,15 @@ command (remember that from earlier?).
     ```bash
     docker run -dp 3000:3000 getting-started
     ```
+    > 💡 **Note:**  
+    > If port `3000` is already in use on your system, you can map the container to a different host port.
 
+    For example:
+
+    ```bash
+    docker run -dp 3001:3000 getting-started
+    ```
+    
     Remember the `-d` and `-p` flags? We're running the new container in "detached" mode (in the 
     background) and creating a mapping between the host's port 3000 to the container's port 3000.
     Without the port mapping, we wouldn't be able to access the application.
