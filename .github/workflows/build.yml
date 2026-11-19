@@ -1,8 +1,6 @@
 name: Build
 on:
   push:
-    branches:
-    - master
   pull_request:
 
 permissions:
@@ -16,7 +14,7 @@ jobs:
       contents: read
       id-token: write
     env:
-      PUSH: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+      PUSH: ${{ github.event_name == 'push' && github.ref_name == github.event.repository.default_branch }}
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
     - name: Set up Docker Buildx
