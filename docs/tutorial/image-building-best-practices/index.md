@@ -1,45 +1,55 @@
 ## Security Scanning
 
-When you have built an image, it is good practice to scan it for security vulnerabilities using the `docker scan` command.
-Docker has partnered with [Snyk](http://snyk.io) to provide the vulnerability scanning service.
+When you have built an image, it is good practice to scan it for security vulnerabilities. Docker Scout provides a powerful set of tools for analyzing your images and identifying potential issues.
 
-For example, to scan the `getting-started` image you created earlier in the tutorial, you can just type
+For example, to get a summary of vulnerabilities and recommendations for the getting-started image you created earlier in the tutorial, you can just type
 
 ```bash
-docker scan getting-started
+docker scout quickview getting-started
 ```
 
-The scan uses a constantly updated database of vulnerabilities, so the output you see will vary as new
-vulnerabilities are discovered, but it might look something like this:
+The command gives you a concise overview of the vulnerabilities in the specified image and vulnerabilities from the base image. It also displays base image refresh and update recommendations if available.
+
+The scan uses a constantly updated database of vulnerabilities, so the output you see will vary as new vulnerabilities are discovered, but it should look something like this:
 
 ```plaintext
-✗ Low severity vulnerability found in freetype/freetype
-  Description: CVE-2020-15999
-  Info: https://snyk.io/vuln/SNYK-ALPINE310-FREETYPE-1019641
-  Introduced through: freetype/freetype@2.10.0-r0, gd/libgd@2.2.5-r2
-  From: freetype/freetype@2.10.0-r0
-  From: gd/libgd@2.2.5-r2 > freetype/freetype@2.10.0-r0
-  Fixed in: 2.10.0-r1
-
-✗ Medium severity vulnerability found in libxml2/libxml2
-  Description: Out-of-bounds Read
-  Info: https://snyk.io/vuln/SNYK-ALPINE310-LIBXML2-674791
-  Introduced through: libxml2/libxml2@2.9.9-r3, libxslt/libxslt@1.1.33-r3, nginx-module-xslt/nginx-module-xslt@1.17.9-r1
-  From: libxml2/libxml2@2.9.9-r3
-  From: libxslt/libxslt@1.1.33-r3 > libxml2/libxml2@2.9.9-r3
-  From: nginx-module-xslt/nginx-module-xslt@1.17.9-r1 > libxml2/libxml2@2.9.9-r3
-  Fixed in: 2.9.9-r4
+  Target             │  getting-started:latest  │    3C    14H     6M     7L
+    digest           │  d084f60d83ad            │
+  Base image         │  node:18-alpine          │    0C     1H     0M     1L
+  Updated base image │  node:20-alpine          │    0C     1H     0M     1L
 ```
 
-The output lists the type of vulnerability, a URL to learn more, and importantly which version of the relevant library
-fixes the vulnerability.
+To get a detailed insights into vulnerabilities and recommendations, you can use the docker scout cves command:
 
-There are several other options, which you can read about in the [docker scan documentation](https://docs.docker.com/engine/scan/).
+```bash
+docker scout cves getting-started
+```
+
+This will display a detailed list of vulnerabilites in the image, including the type of vulnerability, its severity, a URL to learn more, and importantly which version of the relevant library fixes the vulnerability. The output will look something like this (only the first vulnerability is shown here for brevity):
+
+```plaintext
+...
+
+## Packages and Vulnerabilities
+
+   2C     1H     2M     0L  mysql2 2.3.3
+pkg:npm/mysql2@2.3.3
+
+    ✗ CRITICAL CVE-2024-21511 [Improper Control of Generation of Code ('Code Injection')]
+      https://scout.docker.com/v/CVE-2024-21511
+      Affected range : <3.9.7
+      Fixed version  : 3.9.7
+      CVSS Score     : 9.8
+      CVSS Vector    : CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+```
+
+There are many more tools available in Docker Scout to help you analyze your images, which you can read about in the
+[Docker Scout documentation](https://docs.docker.com/scout/).
 
 As well as scanning your newly built image on the command line, you can also [configure Docker Hub](https://docs.docker.com/docker-hub/vulnerability-scanning/)
 to scan all newly pushed images automatically, and you can then see the results in both Docker Hub and Docker Desktop.
 
-![Hub vulnerability scanning](hvs.png){: style=width:75% }
+![Hub vulnerability scanning](scout.png){: style=width:75% }
 {: .text-center }
 
 ## Image Layering
