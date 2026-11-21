@@ -79,13 +79,44 @@ new instance that has never seen this container image! To do this, we will use P
 
 1. Click on the 3000 badge when it comes up and you should see the app with your modifications! Hooray!
     If the 3000 badge doesn't show up, you can click on the "Open Port" button and type in 3000.
+    
+**Uh oh!** You probably saw an error like this:
+
+```bash
+WARNING: The requested image's platform (linux/arm64/v8) 
+does not match the detected host platform (linux/amd64) 
+and no specific platform was requested
+```
+
+So, what happened? You using a M1 MacBook. The image was created on your computer with ARM64 and uploaded to the Hub.
+
+To fix this you have two options:
+
+- Force linux platform when building (easy solution)
+
+   You can force the linux platform when building, by using the `platform` tag in the `Dockerfile`
+   
+   ```dockerfile
+   FROM --platform=linux/amd64 node:12-alpine
+   ```
+
+   Your M1 mac will still be able to run the image, but with an emulation layer.
+   See docs.docker.com/engine/reference/builder/#from
+
+- build a multi-arch image (better solution)
+
+   Use `docker buildx` to build a multi-arch image. See docs.docker.com/desktop/multi-arch
+
+But for now you can just skip this error and head to the next section.
+
 
 ## Recap
 
 In this section, we learned how to share our images by pushing them to a registry. We then went to a
 brand new instance and were able to run the freshly pushed image. This is quite common in CI pipelines,
 where the pipeline will create the image and push it to a registry and then the production environment
-can use the latest version of the image.
+can use the latest version of the image. You also learned that the platform in the image is important
+when you like to use the image on a different platform.
 
 Now that we have that figured out, let's circle back around to what we noticed at the end of the last
 section. As a reminder, we noticed that when we restarted the app, we lost all of our todo list items.
